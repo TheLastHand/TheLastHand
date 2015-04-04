@@ -18,6 +18,7 @@ public class GameWindowFrame extends JFrame {
 
 	static JPanel gameWindowPanel;
 	static GameWindowFrame gameWindowFrame;
+    public static JButton big ;
 	
 	/**
 	 * Launch the application.
@@ -55,6 +56,11 @@ public class GameWindowFrame extends JFrame {
 			int x = 20;
 			int y = 20;
 			int imageNumber = 1;
+			big = new JButton();
+			gameWindowPanel.add(big);
+			big.setEnabled(false);
+			
+			
 			for(int i = 1; i<= 3;i++){
 				for(int j = 1; j<=9; j++){
 					System.out.println("IMAGE NUMBER" + imageNumber);
@@ -170,16 +176,25 @@ class GicikButtonHandler extends MouseAdapter {
 	//zumlama
 	//buyutme
 	public void mouseEntered(MouseEvent event) {
-		bigger.setBounds(GameWindowFrame.gameWindowFrame.getWidth()/2, GameWindowFrame.gameWindowFrame.getHeight()/2, 375, 525);
-		bigger.setIcon(new ImageIcon("C:\\Users\\student\\Desktop\\Workspace\\TheLastHand\\src\\earth\\" + imageNumber + "b.jpg"));
-		GameWindowFrame.gameWindowPanel.add(bigger);
+		System.out.println(event.getX());
+		if(imageX < GameWindowFrame.gameWindowPanel.getWidth()/2){
+			GameWindowFrame.big.setBounds(GameWindowFrame.gameWindowPanel.getWidth()/2 + 100, 100, 375, 525);
+			GameWindowFrame.big.setIcon(new ImageIcon("C:\\Users\\student\\Desktop\\Workspace\\TheLastHand\\src\\earth\\" + imageNumber + "b.jpg"));
+		}
+		else{
+			GameWindowFrame.big.setBounds(200, 100, 375, 525);
+			GameWindowFrame.big.setIcon(new ImageIcon("C:\\Users\\student\\Desktop\\Workspace\\TheLastHand\\src\\earth\\" + imageNumber + "b.jpg"));
+		}
+		GameWindowFrame.big.setVisible(true);
+		GameWindowFrame.big.setEnabled(true);
+		
 		GameWindowFrame.gameWindowPanel.repaint();
 	}
 	
 	//cıkma
 	@Override
 	public void mouseExited(MouseEvent event) {
-		GameWindowFrame.gameWindowPanel.remove(bigger);
+		GameWindowFrame.big.setVisible(false);
 		GameWindowFrame.gameWindowPanel.repaint();
 	}
 	public void setImageX(int x) {
