@@ -45,15 +45,13 @@ public class MainMenuFrame {
 		newGameButton.setBounds(439, 274, 140, 70);
 		newGameButton.setMargin(new Insets(0, 0, 0, 0));
 		mainMenuPanel.add(newGameButton);
+
 		
 		exitButton.setIcon(new ImageIcon(MainMenuFrame.class.getResource("/images/exit.png")));
 		exitButton.setBounds(439, 361, 140, 70);
 		exitButton.setMargin(new Insets(0, 0, 0, 0));
 		mainMenuPanel.add(exitButton);
-		
-		
-		newGameButton.setVisible(true);
-		exitButton.setVisible(true);
+
 
 
 		ActionAppointment.frameRecall();
