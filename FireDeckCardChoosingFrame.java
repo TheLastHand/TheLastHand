@@ -45,54 +45,53 @@ public class FireDeckCardChoosingFrame {
 	private static final JButton replacementCard4 = new JButton();
 	private static final JButton biggerVersionButton = new JButton();
 
-	private static final JButton adam = new JButton();
-	private static final JButton ancientracoon = new JButton();
-	private static final JButton atmosphere = new JButton();
-	private static final JButton buriedarmy = new JButton();
-	private static final JButton champ = new JButton();
-	private static final JButton dolza = new JButton();
-	private static final JButton earthhole = new JButton();
-	private static final JButton earthquake = new JButton();
-	private static final JButton eclipse = new JButton();
-	private static final JButton elderdynosaur = new JButton();
-	private static final JButton embedded = new JButton();
-	private static final JButton fatlord = new JButton();
-	private static final JButton formofmud = new JButton();
-	private static final JButton fornax = new JButton();
-	private static final JButton gortag = new JButton();
-	private static final JButton greatabsorbation = new JButton();
-	private static final JButton groundshaker = new JButton();
-	private static final JButton gruntag = new JButton();
-	private static final JButton guardianofgolems = new JButton();
+	private static final JButton angelofvutrag = new JButton();
+	private static final JButton burningaemadillo = new JButton();
+	private static final JButton criticaldamage = new JButton();
+	private static final JButton danceoffire = new JButton();
+	private static final JButton deerthemightest = new JButton();
+	private static final JButton dragonofflames = new JButton();
+	private static final JButton elderreptile = new JButton();
+	private static final JButton explosion = new JButton();
+	private static final JButton firearmor = new JButton();
+	private static final JButton firegolem = new JButton();
+	private static final JButton firewall = new JButton();
+	private static final JButton firewolf = new JButton();
+	private static final JButton flamefusion = new JButton();
+	private static final JButton flameguard = new JButton();
+	private static final JButton flamethrower = new JButton();
+	private static final JButton frodo = new JButton();
+	private static final JButton furcius = new JButton();
+	private static final JButton ginger = new JButton();
+	private static final JButton hot = new JButton();
 	private static final JButton hpbonus = new JButton();
 	private static final JButton hpbonus2 = new JButton();
 	private static final JButton hpbonus3 = new JButton();
-	private static final JButton hpbonus4 = new JButton();
-	private static final JButton hpbonus5 = new JButton();
-	private static final JButton kraken = new JButton();
-	private static final JButton lieutenantturtle = new JButton();
-	private static final JButton lycanranger = new JButton();
+	private static final JButton hyusha = new JButton();
+	private static final JButton iseeyou = new JButton();
+	private static final JButton kingofthumbor = new JButton();
+	private static final JButton kingofwrath = new JButton();
+	private static final JButton knightofthumbor = new JButton();
+	private static final JButton kockhar = new JButton();
+	private static final JButton lava = new JButton();
+	private static final JButton litmua = new JButton();
+	private static final JButton lordofflames = new JButton();
 	private static final JButton manabonus = new JButton();
-	private static final JButton manofdust = new JButton();
-	private static final JButton meteora = new JButton();
-	private static final JButton nuxia = new JButton();
-	private static final JButton reflection = new JButton();
-	private static final JButton reflection2 = new JButton();
-	private static final JButton rhachor = new JButton();
-	private static final JButton robotsoldier = new JButton();
-	private static final JButton rocky = new JButton();
-	private static final JButton rorox = new JButton();
-	private static final JButton rustybull = new JButton();
-	private static final JButton shaker = new JButton();
-	private static final JButton shieldofbereth = new JButton();
-	private static final JButton skorka = new JButton();
-	private static final JButton sorktangthesleepy = new JButton();
-	private static final JButton splitter = new JButton();
-	private static final JButton stuckinthesand = new JButton();
-	private static final JButton thegreatmammoth = new JButton();
-	private static final JButton trochkar = new JButton();
-	private static final JButton untouchable = new JButton();
-	private static final JButton zildar = new JButton();
+	private static final JButton manabonus2 = new JButton();
+	private static final JButton meanor = new JButton();
+	private static final JButton nomercy = new JButton();
+	private static final JButton patrux = new JButton();
+	private static final JButton presence = new JButton();
+	private static final JButton realburst = new JButton();
+	private static final JButton sengard = new JButton();
+	private static final JButton sheila = new JButton();
+	private static final JButton shieldinflames = new JButton();
+	private static final JButton sindor = new JButton();
+	private static final JButton skyscream = new JButton();
+	private static final JButton thisgirlisonfire = new JButton();
+	private static final JButton ticano = new JButton();
+	private static final JButton turcox = new JButton();
+	private static final JButton welder = new JButton();
 
 	/**
 	 * @wbp.parser.entryPoint
@@ -100,7 +99,7 @@ public class FireDeckCardChoosingFrame {
 	public static void CardChoosingFrame() throws IOException {
 		ImagePanel gameWindowPanel = new ImagePanel(
 				new ImageIcon(FireDeckCardChoosingFrame.class
-						.getResource("/images/earthdeckbackground.jpg"))
+						.getResource("/images/firedeckbackground.jpg"))
 						.getImage());
 
 		cardChoosingFrame.setSize(1000, 720);
@@ -193,453 +192,449 @@ public class FireDeckCardChoosingFrame {
 		cardRepresentationPanel2.setBounds(0, 0, 624, 440);
 		gameWindowPanel.add(cardRepresentationPanel2);
 		cardRepresentationPanel2.setVisible(false);
-	
+
 		cardRepresentationPanel3.setLayout(null);
 		cardRepresentationPanel3.setBackground(new Color(0, 0, 0, 0));
 		cardRepresentationPanel3.setBounds(0, 0, 624, 440);
 		gameWindowPanel.add(cardRepresentationPanel3);
-		cardRepresentationPanel3.setVisible(false);		
+		cardRepresentationPanel3.setVisible(false);
 
 		playButton.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 				.getResource("/images/playButton.png")));
 		playButton.setBounds(514, 178, 100, 40);
 		selectedCardPanel.add(playButton);
-		
+
 		panel1arrowRight.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel1arrowRight.setBounds(481, 393, 46, 48);
 		panel1arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel1.add(panel1arrowRight);
-		
+
 		panel2arrowLeft.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel2arrowLeft.setBounds(71, 393, 46, 48);
 		panel2arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowLeft);
-		
+
 		panel2arrowRight.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel2arrowRight.setBounds(481, 393, 46, 48);
 		panel2arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowRight);
-		
-		
+
 		panel3arrowLeft.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel3arrowLeft.setBounds(71, 393, 46, 48);
 		panel3arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 
 		cardRepresentationPanel3.add(panel3arrowLeft);
+
 		
 		
-		adam.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/adam.jpg")));
-		adam.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel1.add(adam);
 		
-		ancientracoon.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/ancientracoon.jpg")));
-		ancientracoon.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel1.add(ancientracoon);
 		
-		atmosphere.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/atmosphere.jpg")));
-		atmosphere.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel1.add(atmosphere);
-		
-		buriedarmy.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/buriedarmy.jpg")));
-		buriedarmy.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel1.add(buriedarmy);
-		
-		champ.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/champ.jpg")));
-		champ.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel1.add(champ);
-		
-		dolza.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/dolza.jpg")));
-		dolza.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel1.add(dolza);
-		
-		earthhole.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthhole.jpg")));
-		earthhole.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel1.add(earthhole);
-		
-		earthquake.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthquake.jpg")));
-		earthquake.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel1.add(earthquake);
+		angelofvutrag.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/angelofvutrag.jpg")));
+		angelofvutrag.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel1.add(angelofvutrag);
 
-		eclipse.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/eclipse.jpg")));
-		eclipse.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel1.add(eclipse);
+		burningaemadillo.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/burningaemadillo.jpg")));
+		burningaemadillo.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel1.add(burningaemadillo);
 
-		elderdynosaur.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/elderdynosaur.jpg")));
-		elderdynosaur.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel1.add(elderdynosaur);
+		criticaldamage.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/criticaldamage.jpg")));
+		criticaldamage.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel1.add(criticaldamage);
 
-		embedded.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/embedded.jpg")));
-		embedded.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel1.add(embedded);
+		danceoffire.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/danceoffire.jpg")));
+		danceoffire.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel1.add(danceoffire);
 
-		fatlord.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/fatlord.jpg")));
-		fatlord.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel1.add(fatlord);
+		deerthemightest.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/deerthemightest.jpg")));
+		deerthemightest.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel1.add(deerthemightest);
 
-		formofmud.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/formofmud.jpg")));
-		formofmud.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel1.add(formofmud);
+		dragonofflames.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/dragonofflames.jpg")));
+		dragonofflames.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel1.add(dragonofflames);
 
-		fornax.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/fornax.jpg")));
-		fornax.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel1.add(fornax);
+		elderreptile.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/elderreptile.jpg")));
+		elderreptile.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel1.add(elderreptile);
 
-		gortag.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/gortag.jpg")));
-		gortag.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel1.add(gortag);
+		explosion.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/explosion.jpg")));
+		explosion.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel1.add(explosion);
 
-		greatabsorbation.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/greatabsorbation.jpg")));
-		greatabsorbation.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel1.add(greatabsorbation);
+		firearmor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/firearmor.jpg")));
+		firearmor.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel1.add(firearmor);
 
-		groundshaker.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/groundshaker.jpg")));
-		groundshaker.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel1.add(groundshaker);
+		firegolem.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/firegolem.jpg")));
+		firegolem.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel1.add(firegolem);
 
-		gruntag.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/gruntag.jpg")));
-		gruntag.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel1.add(gruntag);
+		firewall.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/firewall.jpg")));
+		firewall.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel1.add(firewall);
 
-		guardianofgolems.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/guardianofgolems.jpg")));
-		guardianofgolems.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel2.add(guardianofgolems);
+		firewolf.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/firewolf.jpg")));
+		firewolf.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel1.add(firewolf);
+
+		flamefusion.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/flamefusion.jpg")));
+		flamefusion.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel1.add(flamefusion);
+
+		flameguard.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/flameguard.jpg")));
+		flameguard.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel1.add(flameguard);
+
+		flamethrower.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/flamethrower.jpg")));
+		flamethrower.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel1.add(flamethrower);
+
+		frodo.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/frodo.jpg")));
+		frodo.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel1.add(frodo);
+
+		furcius.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/furcius.jpg")));
+		furcius.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel1.add(furcius);
+
+		ginger.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/ginger.jpg")));
+		ginger.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel1.add(ginger);
+
+		hot.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/hot.jpg")));
+		hot.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel2.add(hot);
 
 		hpbonus.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus.jpg")));
+				.getResource("/images/fire/hpbonus.jpg")));
 		hpbonus.setBounds(120, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus);
 
 		hpbonus2.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus2.jpg")));
+				.getResource("/images/fire/hpbonus2.jpg")));
 		hpbonus2.setBounds(221, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus2);
 
 		hpbonus3.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus3.jpg")));
+				.getResource("/images/fire/hpbonus3.jpg")));
 		hpbonus3.setBounds(324, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus3);
 
-		hpbonus4.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus4.jpg")));
-		hpbonus4.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus4);
+		hyusha.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/hyusha.jpg")));
+		hyusha.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel2.add(hyusha);
 
-		hpbonus5.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus5.jpg")));
-		hpbonus5.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus5);
-		
-		kraken.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/kraken.jpg")));
-		kraken.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel2.add(kraken);
+		iseeyou.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/iseeyou.jpg")));
+		iseeyou.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel2.add(iseeyou);
 
-		lieutenantturtle.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/lieutenantturtle.jpg")));
-		lieutenantturtle.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel2.add(lieutenantturtle);
+		kingofthumbor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/kingofthumbor.jpg")));
+		kingofthumbor.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel2.add(kingofthumbor);
 
-		lycanranger.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/lycanranger.jpg")));
-		lycanranger.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel2.add(lycanranger);
+		kingofwrath.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/kingofwrath.jpg")));
+		kingofwrath.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel2.add(kingofwrath);
+
+		knightofthumbor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/knightofthumbor.jpg")));
+		knightofthumbor.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel2.add(knightofthumbor);
+
+		kockhar.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/kockhar.jpg")));
+		kockhar.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel2.add(kockhar);
+
+		lava.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/lava.jpg")));
+		lava.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel2.add(lava);
+
+		litmua.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/litmua.jpg")));
+		litmua.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel2.add(litmua);
+
+		lordofflames.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/lordofflames.jpg")));
+		lordofflames.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel2.add(lordofflames);
 
 		manabonus.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/manabonus.jpg")));
-		manabonus.setBounds(324, 138, 80, 111);
+				.getResource("/images/fire/manabonus.jpg")));
+		manabonus.setBounds(120, 264, 80, 111);
 		cardRepresentationPanel2.add(manabonus);
 
-		manofdust.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/manofdust.jpg")));
-		manofdust.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel2.add(manofdust);
+		manabonus2.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/manabonus2.jpg")));
+		manabonus2.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel2.add(manabonus2);
 
-		meteora.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/meteora.jpg")));
-		meteora.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel2.add(meteora);
+		meanor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/meanor.jpg")));
+		meanor.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel2.add(meanor);
 
-		nuxia.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/nuxia.jpg")));
-		nuxia.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel2.add(nuxia);
+		nomercy.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/nomercy.jpg")));
+		nomercy.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel2.add(nomercy);
 
-		reflection.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection.jpg")));
-		reflection.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection);
+		patrux.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/patrux.jpg")));
+		patrux.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel2.add(patrux);
 
-		reflection2.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection2.jpg")));
-		reflection2.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection2);
+		presence.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/presence.jpg")));
+		presence.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel3.add(presence);
 
-		rhachor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/rhachor.jpg")));
-		rhachor.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel2.add(rhachor);
+		realburst.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/realburst.jpg")));
+		realburst.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel3.add(realburst);
 
-		robotsoldier.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/robotsoldier.jpg")));
-		robotsoldier.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel2.add(robotsoldier);
+		sengard.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/sengard.jpg")));
+		sengard.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel3.add(sengard);
 
-		rocky.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/rocky.jpg")));
-		rocky.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel2.add(rocky);
+		sheila.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/sheila.jpg")));
+		sheila.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel3.add(sheila);
 
-		rorox.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/rorox.jpg")));
-		rorox.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel3.add(rorox);
+		shieldinflames.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/shieldinflames.jpg")));
+		shieldinflames.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel3.add(shieldinflames);
 
-		rustybull.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/rustybull.jpg")));
-		rustybull.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel3.add(rustybull);
+		sindor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/sindor.jpg")));
+		sindor.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel3.add(sindor);
 
-		shaker.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/shaker.jpg")));
-		shaker.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel3.add(shaker);
+		skyscream.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/skyscream.jpg")));
+		skyscream.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel3.add(skyscream);
 
-		shieldofbereth.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/shieldofbereth.jpg")));
-		shieldofbereth.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel3.add(shieldofbereth);
+		thisgirlisonfire.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/thisgirlisonfire.jpg")));
+		thisgirlisonfire.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel3.add(thisgirlisonfire);
 
-		skorka.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/skorka.jpg")));
-		skorka.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel3.add(skorka);
+		ticano.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/ticano.jpg")));
+		ticano.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel3.add(ticano);
 
-		sorktangthesleepy.setIcon(new ImageIcon(
-				FireDeckCardChoosingFrame.class
-						.getResource("/images/earth/sorktangthesleepy.jpg")));
-		sorktangthesleepy.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel3.add(sorktangthesleepy);
+		turcox.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/turcox.jpg")));
+		turcox.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel3.add(turcox);
 
-		splitter.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/splitter.jpg")));
-		splitter.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel3.add(splitter);
+		welder.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+				.getResource("/images/fire/welder.jpg")));
+		welder.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel3.add(welder);
 
-		stuckinthesand.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/stuckinthesand.jpg")));
-		stuckinthesand.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel3.add(stuckinthesand);
-
-		thegreatmammoth.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/thegreatmammoth.jpg")));
-		thegreatmammoth.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel3.add(thegreatmammoth);
-
-		trochkar.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/trochkar.jpg")));
-		trochkar.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel3.add(trochkar);
-
-		untouchable.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/untouchable.jpg")));
-		untouchable.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel3.add(untouchable);
-
-		zildar.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
-				.getResource("/images/earth/zildar.jpg")));
-		zildar.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel3.add(zildar);
-
-		adam.addMouseListener(new MouseAdapter() {
+		angelofvutrag.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/adamb.jpg")));
+								.getResource("/images/fire/angelofvutragb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		ancientracoon.addMouseListener(new MouseAdapter() {
+		burningaemadillo.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/ancientracoonb.jpg")));
+								.getResource("/images/fire/burningaemadillob.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		atmosphere.addMouseListener(new MouseAdapter() {
+		criticaldamage.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/atmosphereb.jpg")));
+								.getResource("/images/fire/criticaldamageb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		buriedarmy.addMouseListener(new MouseAdapter() {
+		danceoffire.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/buriedarmyb.jpg")));
+								.getResource("/images/fire/danceoffireb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		champ.addMouseListener(new MouseAdapter() {
+		deerthemightest.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/champb.jpg")));
+								.getResource("/images/fire/deerthemightestb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		dolza.addMouseListener(new MouseAdapter() {
+		dragonofflames.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/dolzab.jpg")));
+								.getResource("/images/fire/dragonofflamesb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthhole.addMouseListener(new MouseAdapter() {
+		elderreptile.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthholeb.jpg")));
+								.getResource("/images/fire/elderreptileb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthquake.addMouseListener(new MouseAdapter() {
+		explosion.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthquakeb.jpg")));
+								.getResource("/images/fire/explosionb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		eclipse.addMouseListener(new MouseAdapter() {
+		firearmor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/eclipseb.jpg")));
+								.getResource("/images/fire/firearmorb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		elderdynosaur.addMouseListener(new MouseAdapter() {
+		firegolem.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/elderdynosaurb.jpg")));
+								.getResource("/images/fire/firegolemb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		embedded.addMouseListener(new MouseAdapter() {
+		firewall.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/embeddedb.jpg")));
+								.getResource("/images/fire/firewallb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fatlord.addMouseListener(new MouseAdapter() {
+		firewolf.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/fatlordb.jpg")));
+								.getResource("/images/fire/firewolfb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		formofmud.addMouseListener(new MouseAdapter() {
+		flamefusion.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/formofmudb.jpg")));
+								.getResource("/images/fire/flamefusionb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fornax.addMouseListener(new MouseAdapter() {
+		flameguard.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/fornaxb.jpg")));
+								.getResource("/images/fire/flameguardb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		gortag.addMouseListener(new MouseAdapter() {
+		flamethrower.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/gortagb.jpg")));
+								.getResource("/images/fire/flamethrowerb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		greatabsorbation.addMouseListener(new MouseAdapter() {
+		frodo.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/greatabsorbationb.jpg")));
+								.getResource("/images/fire/frodob.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		groundshaker.addMouseListener(new MouseAdapter() {
+		furcius.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/groundshakerb.jpg")));
+								.getResource("/images/fire/furciusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		gruntag.addMouseListener(new MouseAdapter() {
+		ginger.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/gruntagb.jpg")));
+								.getResource("/images/fire/gingerb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		guardianofgolems.addMouseListener(new MouseAdapter() {
+		hot.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/guardianofgolemsb.jpg")));
+								.getResource("/images/fire/hotb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -648,7 +643,7 @@ public class FireDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonusb.jpg")));
+								.getResource("/images/fire/hpbonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -657,7 +652,7 @@ public class FireDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus2b.jpg")));
+								.getResource("/images/fire/hpbonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -666,248 +661,238 @@ public class FireDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus3b.jpg")));
+								.getResource("/images/fire/hpbonus3b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		hpbonus4.addMouseListener(new MouseAdapter() {
+		hyusha.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus4b.jpg")));
+								.getResource("/images/fire/hyushab.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		hpbonus5.addMouseListener(new MouseAdapter() {
+		iseeyou.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus5b.jpg")));
+								.getResource("/images/fire/iseeyoub.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		kraken.addMouseListener(new MouseAdapter() {
+		kingofthumbor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/krakenb.jpg")));
+								.getResource("/images/fire/kingofthumborb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lieutenantturtle.addMouseListener(new MouseAdapter() {
+		kingofwrath.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/lieutenantturtleb.jpg")));
+								.getResource("/images/fire/kingofwrathb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lycanranger.addMouseListener(new MouseAdapter() {
+		knightofthumbor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/lycanrangerb.jpg")));
+								.getResource("/images/fire/knightofthumborb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
 
+		kockhar.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/kockharb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		lava.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/lavab.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		litmua.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/litmuab.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		lordofflames.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/lordofflamesb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
 		manabonus.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/manabonusb.jpg")));
+								.getResource("/images/fire/manabonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		manofdust.addMouseListener(new MouseAdapter() {
+		manabonus2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/manofdustb.jpg")));
+								.getResource("/images/fire/manabonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		meteora.addMouseListener(new MouseAdapter() {
+
+		meanor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/meteorab.jpg")));
+								.getResource("/images/fire/meanorb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		nuxia.addMouseListener(new MouseAdapter() {
+		nomercy.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/nuxiab.jpg")));
+								.getResource("/images/fire/nomercyb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		reflection.addMouseListener(new MouseAdapter() {
+		patrux.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflectionb.jpg")));
+								.getResource("/images/fire/patruxb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		reflection2.addMouseListener(new MouseAdapter() {
+		presence.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflection2b.jpg")));
+								.getResource("/images/fire/presenceb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-
-		rhachor.addMouseListener(new MouseAdapter() {
+		realburst.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/rhachorb.jpg")));
+								.getResource("/images/fire/realburstb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		robotsoldier.addMouseListener(new MouseAdapter() {
+		sengard.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/robotsoldierb.jpg")));
+								.getResource("/images/fire/sengardb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rocky.addMouseListener(new MouseAdapter() {
+		sheila.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/rockyb.jpg")));
+								.getResource("/images/fire/sheilab.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rorox.addMouseListener(new MouseAdapter() {
+		shieldinflames.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/roroxb.jpg")));
+								.getResource("/images/fire/shieldinflamesb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rustybull.addMouseListener(new MouseAdapter() {
+		sindor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/rustybullb.jpg")));
+								.getResource("/images/fire/sindorb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shaker.addMouseListener(new MouseAdapter() {
+		skyscream.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/shakerb.jpg")));
+								.getResource("/images/fire/skyscreamb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shieldofbereth.addMouseListener(new MouseAdapter() {
+		thisgirlisonfire.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/shieldofberethb.jpg")));
+								.getResource("/images/fire/thisgirlisonfireb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		skorka.addMouseListener(new MouseAdapter() {
+		ticano.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/skorkab.jpg")));
+								.getResource("/images/fire/ticanob.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		sorktangthesleepy.addMouseListener(new MouseAdapter() {
+		turcox.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/sorktangthesleepyb.jpg")));
+								.getResource("/images/fire/turcoxb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		splitter.addMouseListener(new MouseAdapter() {
+		welder.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/splitterb.jpg")));
+								.getResource("/images/fire/welderb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		stuckinthesand.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/stuckinthesandb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		thegreatmammoth.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/thegreatmammothb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		trochkar.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/trochkarb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		untouchable.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/untouchableb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		zildar.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						FireDeckCardChoosingFrame.class
-								.getResource("/images/earth/zildarb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-
 	}
 }
 
