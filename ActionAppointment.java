@@ -1,18 +1,14 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-
 public class ActionAppointment {
+	public static String frame;
+	public static String path;
 
 	public static void frameRecall() {
 
@@ -41,7 +37,7 @@ public class ActionAppointment {
 						if (command.equals("earthDeckButton")) {
 							try {
 								EarthDeckCardChoosingFrame.CardChoosingFrame();
-								playSound();
+								// playSound();
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -214,9 +210,35 @@ public class ActionAppointment {
 						String command = e.getActionCommand();
 
 						if (command.equals("playButton")) {
-							GameProcessFrame.GameProcessFrame();
+							try {
+								GameProcessFrame.gameProcessFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							};
 							EarthDeckCardChoosingFrame.cardChoosingFrame
 									.dispose();
+						}
+					}
+				});
+		EarthDeckCardChoosingFrame.backButton.setActionCommand("backButton");
+		EarthDeckCardChoosingFrame.backButton
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("backButton")) {
+
+							try {
+								DeckChoosingFrame.deckChoosingFrame();
+								DeckChoosingFrame.deckChoosingFrame.repaint();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							EarthDeckCardChoosingFrame.cardChoosingFrame
+									.dispose();
+
 						}
 					}
 				});
@@ -294,9 +316,35 @@ public class ActionAppointment {
 						String command = e.getActionCommand();
 
 						if (command.equals("playButton")) {
-							GameProcessFrame.GameProcessFrame();
+							try {
+								GameProcessFrame.gameProcessFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							FireDeckCardChoosingFrame.cardChoosingFrame
 									.dispose();
+						}
+					}
+				});
+
+		FireDeckCardChoosingFrame.backButton.setActionCommand("backButton");
+		FireDeckCardChoosingFrame.backButton
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("backButton")) {
+
+							try {
+								DeckChoosingFrame.deckChoosingFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							FireDeckCardChoosingFrame.cardChoosingFrame
+									.dispose();
+
 						}
 					}
 				});
@@ -374,9 +422,34 @@ public class ActionAppointment {
 						String command = e.getActionCommand();
 
 						if (command.equals("playButton")) {
-							GameProcessFrame.GameProcessFrame();
+							try {
+								GameProcessFrame.gameProcessFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							GlacierDeckCardChoosingFrame.cardChoosingFrame
 									.dispose();
+						}
+					}
+				});
+		GlacierDeckCardChoosingFrame.backButton.setActionCommand("backButton");
+		GlacierDeckCardChoosingFrame.backButton
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("backButton")) {
+
+							try {
+								DeckChoosingFrame.deckChoosingFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							GlacierDeckCardChoosingFrame.cardChoosingFrame
+									.dispose();
+
 						}
 					}
 				});
@@ -454,9 +527,34 @@ public class ActionAppointment {
 						String command = e.getActionCommand();
 
 						if (command.equals("playButton")) {
-							GameProcessFrame.GameProcessFrame();
+							try {
+								GameProcessFrame.gameProcessFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							NatureDeckCardChoosingFrame.cardChoosingFrame
 									.dispose();
+						}
+					}
+				});
+		NatureDeckCardChoosingFrame.backButton.setActionCommand("backButton");
+		NatureDeckCardChoosingFrame.backButton
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("backButton")) {
+
+							try {
+								DeckChoosingFrame.deckChoosingFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							NatureDeckCardChoosingFrame.cardChoosingFrame
+									.dispose();
+
 						}
 					}
 				});
@@ -521,6 +619,38 @@ public class ActionAppointment {
 							WaterDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(false);
 							WaterDeckCardChoosingFrame.cardRepresentationPanel2
+									.setVisible(true);
+
+						}
+					}
+				});
+		WaterDeckCardChoosingFrame.panel3arrowRight
+				.setActionCommand("panel3arrowRight");
+		WaterDeckCardChoosingFrame.panel3arrowRight
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("panel3arrowRight")) {
+							WaterDeckCardChoosingFrame.cardRepresentationPanel3
+									.setVisible(false);
+							WaterDeckCardChoosingFrame.cardRepresentationPanel4
+									.setVisible(true);
+
+						}
+					}
+				});
+		WaterDeckCardChoosingFrame.panel4arrowLeft
+				.setActionCommand("panel4arrowLeft");
+		WaterDeckCardChoosingFrame.panel4arrowLeft
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("panel4arrowLeft")) {
+							WaterDeckCardChoosingFrame.cardRepresentationPanel4
+									.setVisible(false);
+							WaterDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
 
 						}
@@ -534,9 +664,34 @@ public class ActionAppointment {
 						String command = e.getActionCommand();
 
 						if (command.equals("playButton")) {
-							GameProcessFrame.GameProcessFrame();
+							try {
+								GameProcessFrame.gameProcessFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							WaterDeckCardChoosingFrame.cardChoosingFrame
 									.dispose();
+						}
+					}
+				});
+		WaterDeckCardChoosingFrame.backButton.setActionCommand("backButton");
+		WaterDeckCardChoosingFrame.backButton
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("backButton")) {
+
+							try {
+								DeckChoosingFrame.deckChoosingFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							WaterDeckCardChoosingFrame.cardChoosingFrame
+									.dispose();
+
 						}
 					}
 				});
@@ -601,6 +756,38 @@ public class ActionAppointment {
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(false);
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel2
+									.setVisible(true);
+
+						}
+					}
+				});
+		UnderworldDeckCardChoosingFrame.panel3arrowRight
+				.setActionCommand("panel3arrowRight");
+		UnderworldDeckCardChoosingFrame.panel3arrowRight
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("panel3arrowRight")) {
+							UnderworldDeckCardChoosingFrame.cardRepresentationPanel3
+									.setVisible(false);
+							UnderworldDeckCardChoosingFrame.cardRepresentationPanel4
+									.setVisible(true);
+
+						}
+					}
+				});
+		UnderworldDeckCardChoosingFrame.panel4arrowLeft
+				.setActionCommand("panel4arrowLeft");
+		UnderworldDeckCardChoosingFrame.panel4arrowLeft
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("panel4arrowLeft")) {
+							UnderworldDeckCardChoosingFrame.cardRepresentationPanel4
+									.setVisible(false);
+							UnderworldDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
 
 						}
@@ -615,9 +802,35 @@ public class ActionAppointment {
 						String command = e.getActionCommand();
 
 						if (command.equals("playButton")) {
-							GameProcessFrame.GameProcessFrame();
+							try {
+								GameProcessFrame.gameProcessFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 							UnderworldDeckCardChoosingFrame.cardChoosingFrame
 									.dispose();
+						}
+					}
+				});
+		UnderworldDeckCardChoosingFrame.backButton
+				.setActionCommand("backButton");
+		UnderworldDeckCardChoosingFrame.backButton
+				.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						String command = e.getActionCommand();
+
+						if (command.equals("backButton")) {
+
+							try {
+								DeckChoosingFrame.deckChoosingFrame();
+							} catch (IOException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+							UnderworldDeckCardChoosingFrame.cardChoosingFrame
+									.dispose();
+
 						}
 					}
 				});
@@ -639,9 +852,11 @@ public class ActionAppointment {
 			Clip clip = AudioSystem.getClip();
 			clip.open(audioInputStream);
 			clip.start();
+
 		} catch (Exception ex) {
 			System.out.println("Error with playing sound.");
 			ex.printStackTrace();
 		}
 	}
+
 }
