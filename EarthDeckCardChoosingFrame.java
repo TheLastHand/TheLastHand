@@ -3,9 +3,13 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +35,9 @@ public class EarthDeckCardChoosingFrame {
 	static final JButton panel3arrowLeft = new JButton();
 	static final JButton playButton = new JButton();
 
+	
+	private static int key = 0 ;
+    private static final JButton[] selectedCards= new JButton[12];
 	private static final JButton selectedCard1 = new JButton();
 	private static final JButton selectedCard2 = new JButton();
 	private static final JButton selectedCard3 = new JButton();
@@ -129,7 +136,7 @@ public class EarthDeckCardChoosingFrame {
 		selectedCardPanel.setLayout(null);
 		selectedCardPanel.setBackground(new Color(0, 0, 0, 0));
 		selectedCard1.setBounds(75, 11, 80, 111);
-
+		
 		selectedCardPanel.add(selectedCard1);
 		selectedCard2.setBounds(122, 11, 80, 111);
 
@@ -151,6 +158,20 @@ public class EarthDeckCardChoosingFrame {
 		selectedCardPanel.add(selectedCard7);
 		selectedCard8.setBounds(392, 11, 80, 111);
 
+		
+		selectedCards[0] = selectedCard1;
+		selectedCards[1] = selectedCard2;
+		selectedCards[2] = selectedCard3;
+		selectedCards[3] = selectedCard4;
+		selectedCards[4] = selectedCard5;
+		selectedCards[5] = selectedCard6;
+		selectedCards[6] = selectedCard7;
+		selectedCards[7] = selectedCard8;
+		selectedCards[8] = replacementCard1;
+		selectedCards[9] = replacementCard2;
+		selectedCards[10] = replacementCard3;
+		selectedCards[11] = replacementCard4;
+						
 		selectedCardPanel.add(selectedCard8);
 		replacementCard1.setBounds(75, 129, 80, 111);
 
@@ -165,18 +186,18 @@ public class EarthDeckCardChoosingFrame {
 
 		selectedCardPanel.add(replacementCard4);
 
-		selectedCard1.setVisible(false);
-		selectedCard2.setVisible(false);
-		selectedCard3.setVisible(false);
-		selectedCard4.setVisible(false);
-		selectedCard5.setVisible(false);
-		selectedCard6.setVisible(false);
-		selectedCard7.setVisible(false);
-		selectedCard8.setVisible(false);
-		replacementCard1.setVisible(false);
-		replacementCard2.setVisible(false);
-		replacementCard3.setVisible(false);
-		replacementCard4.setVisible(false);
+		selectedCard1.setVisible(true);
+		selectedCard2.setVisible(true);
+		selectedCard3.setVisible(true);
+		selectedCard4.setVisible(true);
+		selectedCard5.setVisible(true);
+		selectedCard6.setVisible(true);
+		selectedCard7.setVisible(true);
+		selectedCard8.setVisible(true);
+		replacementCard1.setVisible(true);
+		replacementCard2.setVisible(true);
+		replacementCard3.setVisible(true);
+		replacementCard4.setVisible(true);
 
 		chatPanel.setBounds(619, 442, 376, 229);
 		gameWindowPanel.add(chatPanel);
@@ -482,6 +503,18 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		
+		adam.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/adam.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
+		
 		ancientracoon.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -491,6 +524,16 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		ancientracoon.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/ancientracoon.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
+		
 		atmosphere.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -498,6 +541,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/atmosphereb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		atmosphere.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/atmosphere.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		buriedarmy.addMouseListener(new MouseAdapter() {
@@ -509,6 +561,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		buriedarmy.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/buriedarmy.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		champ.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -516,6 +577,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/champb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		champ.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/champ.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		dolza.addMouseListener(new MouseAdapter() {
@@ -527,6 +597,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		dolza.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/dolza.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		earthhole.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -534,6 +613,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/earthholeb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		earthhole.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/earthhole.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		earthquake.addMouseListener(new MouseAdapter() {
@@ -545,6 +633,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		earthquake.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/earthquake.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		eclipse.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -552,6 +649,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/eclipseb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		eclipse.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/eclipse.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		elderdynosaur.addMouseListener(new MouseAdapter() {
@@ -563,6 +669,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		elderdynosaur.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/elderdynosaur.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		embedded.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -570,6 +685,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/embeddedb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		embedded.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/embedded.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		fatlord.addMouseListener(new MouseAdapter() {
@@ -581,6 +705,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		fatlord.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/fatlord.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		formofmud.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -588,6 +721,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/formofmudb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		formofmud.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/formofmud.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		fornax.addMouseListener(new MouseAdapter() {
@@ -599,6 +741,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		fornax.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/fornax.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		gortag.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -606,6 +757,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/gortagb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		gortag.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/gortag.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		greatabsorbation.addMouseListener(new MouseAdapter() {
@@ -617,6 +777,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		greatabsorbation.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/greatabsorbation.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		groundshaker.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -624,6 +793,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/groundshakerb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		groundshaker.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/groundshaker.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		gruntag.addMouseListener(new MouseAdapter() {
@@ -635,6 +813,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		gruntag.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/gruntag.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		guardianofgolems.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -642,6 +829,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/guardianofgolemsb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		guardianofgolems.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/guardianofgolems.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		hpbonus.addMouseListener(new MouseAdapter() {
@@ -653,6 +849,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		hpbonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/hpbonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		hpbonus2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -660,6 +865,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/hpbonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		hpbonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/hpbonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		hpbonus3.addMouseListener(new MouseAdapter() {
@@ -671,6 +885,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		hpbonus3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/hpbonus3.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		hpbonus4.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -678,6 +901,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/hpbonus4b.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		hpbonus4.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/hpbonus4.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		hpbonus5.addMouseListener(new MouseAdapter() {
@@ -689,6 +921,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		hpbonus5.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/hpbonus5.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		kraken.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -696,6 +937,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/krakenb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		kraken.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/kraken.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		lieutenantturtle.addMouseListener(new MouseAdapter() {
@@ -707,6 +957,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		lieutenantturtle.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/lieutenantturtle.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		lycanranger.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -714,6 +973,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/lycanrangerb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		lycanranger.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/lycanranger.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 
@@ -726,6 +994,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		manabonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/manabonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		manofdust.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -733,6 +1010,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/manofdustb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		manofdust.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/manofdust.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		meteora.addMouseListener(new MouseAdapter() {
@@ -744,6 +1030,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		meteora.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/meteora.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		nuxia.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -751,6 +1046,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/nuxiab.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		nuxia.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/nuxia.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		reflection.addMouseListener(new MouseAdapter() {
@@ -762,6 +1066,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		reflection.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/reflection.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		reflection2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -769,6 +1082,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/reflection2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		reflection2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/reflection2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 
@@ -781,6 +1103,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		rhachor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/rhachor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		robotsoldier.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -788,6 +1119,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/robotsoldierb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		robotsoldier.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/robotsoldier.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		rocky.addMouseListener(new MouseAdapter() {
@@ -799,6 +1139,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		rocky.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/rocky.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		rorox.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -806,6 +1155,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/roroxb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		rorox.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/rorox.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		rustybull.addMouseListener(new MouseAdapter() {
@@ -817,6 +1175,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		rustybull.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/rustybull.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		shaker.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -824,6 +1191,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/shakerb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		shaker.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/shaker.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		shieldofbereth.addMouseListener(new MouseAdapter() {
@@ -835,6 +1211,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		shieldofbereth.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/shieldofbereth.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		skorka.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -842,6 +1227,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/skorkab.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		skorka.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/skorka.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		sorktangthesleepy.addMouseListener(new MouseAdapter() {
@@ -853,6 +1247,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		sorktangthesleepy.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/sorktangthesleepy.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		splitter.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -860,6 +1263,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/splitterb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		splitter.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/splitter.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		stuckinthesand.addMouseListener(new MouseAdapter() {
@@ -871,6 +1283,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		stuckinthesand.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/stuckinthesand.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		thegreatmammoth.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -878,6 +1299,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/thegreatmammothb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		thegreatmammoth.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/thegreatmammoth.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 		trochkar.addMouseListener(new MouseAdapter() {
@@ -889,6 +1319,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		trochkar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/trochkar.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		untouchable.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -898,6 +1337,15 @@ public class EarthDeckCardChoosingFrame {
 
 			}
 		});
+		untouchable.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/untouchable.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+			}
+		});
 		zildar.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
@@ -905,6 +1353,15 @@ public class EarthDeckCardChoosingFrame {
 								.getResource("/images/earth/zildarb.jpg")));
 				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		zildar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						EarthDeckCardChoosingFrame.class
+								.getResource("/images/earth/zildar.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
 			}
 		});
 
