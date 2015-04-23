@@ -1,11 +1,9 @@
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +29,8 @@ public class NatureDeckCardChoosingFrame {
 	static final JButton panel3arrowLeft = new JButton();
 	static final JButton playButton = new JButton();
 
+	private static int key = 0;
+	private static final JButton[] selectedCards = new JButton[12];
 	private static final JButton selectedCard1 = new JButton();
 	private static final JButton selectedCard2 = new JButton();
 	private static final JButton selectedCard3 = new JButton();
@@ -45,54 +45,60 @@ public class NatureDeckCardChoosingFrame {
 	private static final JButton replacementCard4 = new JButton();
 	private static final JButton biggerVersionButton = new JButton();
 
-	private static final JButton adam = new JButton();
-	private static final JButton ancientracoon = new JButton();
-	private static final JButton atmosphere = new JButton();
-	private static final JButton buriedarmy = new JButton();
-	private static final JButton champ = new JButton();
-	private static final JButton dolza = new JButton();
-	private static final JButton earthhole = new JButton();
-	private static final JButton earthquake = new JButton();
-	private static final JButton eclipse = new JButton();
-	private static final JButton elderdynosaur = new JButton();
-	private static final JButton embedded = new JButton();
-	private static final JButton fatlord = new JButton();
-	private static final JButton formofmud = new JButton();
-	private static final JButton fornax = new JButton();
-	private static final JButton gortag = new JButton();
-	private static final JButton greatabsorbation = new JButton();
-	private static final JButton groundshaker = new JButton();
-	private static final JButton gruntag = new JButton();
-	private static final JButton guardianofgolems = new JButton();
+	private static final JButton bangurath = new JButton();
+	private static final JButton belutax = new JButton();
+	private static final JButton callofnature = new JButton();
+	private static final JButton centaur = new JButton();
+	private static final JButton charm = new JButton();
+	private static final JButton corruption = new JButton();
+	private static final JButton deeproots = new JButton();
+	private static final JButton elvengirl = new JButton();
+	private static final JButton fathurux = new JButton();
+	private static final JButton forestgin = new JButton();
+	private static final JButton greatcare = new JButton();
+	private static final JButton greenhippi = new JButton();
+	private static final JButton halusination = new JButton();
+	private static final JButton harmonicconvergence = new JButton();
 	private static final JButton hpbonus = new JButton();
 	private static final JButton hpbonus2 = new JButton();
 	private static final JButton hpbonus3 = new JButton();
 	private static final JButton hpbonus4 = new JButton();
-	private static final JButton hpbonus5 = new JButton();
-	private static final JButton kraken = new JButton();
-	private static final JButton lieutenantturtle = new JButton();
-	private static final JButton lycanranger = new JButton();
+	private static final JButton hpregeneration = new JButton();
+	private static final JButton hurrican = new JButton();
+	private static final JButton ladytheforest = new JButton();
+	private static final JButton liquidleaves = new JButton();
+	private static final JButton magicmushroom = new JButton();
+	private static final JButton malfurion = new JButton();
 	private static final JButton manabonus = new JButton();
-	private static final JButton manofdust = new JButton();
-	private static final JButton meteora = new JButton();
-	private static final JButton nuxia = new JButton();
-	private static final JButton reflection = new JButton();
-	private static final JButton reflection2 = new JButton();
-	private static final JButton rhachor = new JButton();
-	private static final JButton robotsoldier = new JButton();
-	private static final JButton rocky = new JButton();
-	private static final JButton rorox = new JButton();
-	private static final JButton rustybull = new JButton();
-	private static final JButton shaker = new JButton();
-	private static final JButton shieldofbereth = new JButton();
-	private static final JButton skorka = new JButton();
-	private static final JButton sorktangthesleepy = new JButton();
-	private static final JButton splitter = new JButton();
-	private static final JButton stuckinthesand = new JButton();
-	private static final JButton thegreatmammoth = new JButton();
-	private static final JButton trochkar = new JButton();
-	private static final JButton untouchable = new JButton();
-	private static final JButton zildar = new JButton();
+	private static final JButton manabonus2 = new JButton();
+	private static final JButton manaregeneration = new JButton();
+	private static final JButton manaregeneration2 = new JButton();
+	private static final JButton manaregeneration3 = new JButton();
+	private static final JButton motherofnature = new JButton();
+	private static final JButton mrcrocodile = new JButton();
+	private static final JButton naturalzombie = new JButton();
+	private static final JButton naturalzone = new JButton();
+	private static final JButton naturetransporter = new JButton();
+	private static final JButton protectoroftherealm = new JButton();
+	private static final JButton rangerofthevalley = new JButton();
+	private static final JButton rebirth = new JButton();
+	private static final JButton rootsinthedeep = new JButton();
+	private static final JButton rotrek = new JButton();
+	private static final JButton shepherd = new JButton();
+	private static final JButton shieldofnature = new JButton();
+	private static final JButton solidarity = new JButton();
+	private static final JButton souloflife = new JButton();
+	private static final JButton spiritoftheforest = new JButton();
+	private static final JButton stoyax = new JButton();
+	private static final JButton thc = new JButton();
+	private static final JButton thealmighty = new JButton();
+	private static final JButton thegreathoot = new JButton();
+	private static final JButton timesofdinosaurs = new JButton();
+	private static final JButton treeboy = new JButton();
+	private static final JButton undyingspirit = new JButton();
+	private static final JButton weezy = new JButton();
+	private static final JButton whole = new JButton();
+	private static final JButton woodenwoman = new JButton();
 
 	/**
 	 * @wbp.parser.entryPoint
@@ -100,7 +106,7 @@ public class NatureDeckCardChoosingFrame {
 	public static void CardChoosingFrame() throws IOException {
 		ImagePanel gameWindowPanel = new ImagePanel(
 				new ImageIcon(NatureDeckCardChoosingFrame.class
-						.getResource("/images/earthdeckbackground.jpg"))
+						.getResource("/images/naturedeckbackground.jpg"))
 						.getImage());
 
 		cardChoosingFrame.setSize(1000, 720);
@@ -128,55 +134,83 @@ public class NatureDeckCardChoosingFrame {
 		gameWindowPanel.add(selectedCardPanel);
 		selectedCardPanel.setLayout(null);
 		selectedCardPanel.setBackground(new Color(0, 0, 0, 0));
+		
+		selectedCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard1.setBounds(75, 11, 80, 111);
-
+		
 		selectedCardPanel.add(selectedCard1);
+		selectedCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard2.setBounds(122, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard2);
+		selectedCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard3.setBounds(165, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard3);
+		selectedCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard4.setBounds(212, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard4);
+		selectedCard5.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard5.setBounds(255, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard5);
+		selectedCard6.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard6.setBounds(302, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard6);
+		selectedCard7.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard7.setBounds(345, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard7);
+		selectedCard8.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard8.setBounds(392, 11, 80, 111);
 
+		
+		selectedCards[0] = selectedCard1;
+		selectedCards[1] = selectedCard2;
+		selectedCards[2] = selectedCard3;
+		selectedCards[3] = selectedCard4;
+		selectedCards[4] = selectedCard5;
+		selectedCards[5] = selectedCard6;
+		selectedCards[6] = selectedCard7;
+		selectedCards[7] = selectedCard8;
+		selectedCards[8] = replacementCard1;
+		selectedCards[9] = replacementCard2;
+		selectedCards[10] = replacementCard3;
+		selectedCards[11] = replacementCard4;
+						
 		selectedCardPanel.add(selectedCard8);
+		
+		replacementCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard1.setBounds(75, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard1);
+		
+		replacementCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard2.setBounds(122, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard2);
+		
+		replacementCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard3.setBounds(165, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard3);
+		
+		replacementCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard4.setBounds(212, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard4);
-
-		selectedCard1.setVisible(false);
-		selectedCard2.setVisible(false);
-		selectedCard3.setVisible(false);
-		selectedCard4.setVisible(false);
-		selectedCard5.setVisible(false);
-		selectedCard6.setVisible(false);
-		selectedCard7.setVisible(false);
-		selectedCard8.setVisible(false);
-		replacementCard1.setVisible(false);
-		replacementCard2.setVisible(false);
-		replacementCard3.setVisible(false);
-		replacementCard4.setVisible(false);
+		
+		
+		selectedCard1.setVisible(true);
+		selectedCard2.setVisible(true);
+		selectedCard3.setVisible(true);
+		selectedCard4.setVisible(true);
+		selectedCard5.setVisible(true);
+		selectedCard6.setVisible(true);
+		selectedCard7.setVisible(true);
+		selectedCard8.setVisible(true);
+		replacementCard1.setVisible(true);
+		replacementCard2.setVisible(true);
+		replacementCard3.setVisible(true);
+		replacementCard4.setVisible(true);
 
 		chatPanel.setBounds(619, 442, 376, 229);
 		gameWindowPanel.add(chatPanel);
@@ -200,446 +234,438 @@ public class NatureDeckCardChoosingFrame {
 		gameWindowPanel.add(cardRepresentationPanel3);
 		cardRepresentationPanel3.setVisible(false);		
 
-		playButton.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+		playButton.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/playButton.png")));
 		playButton.setBounds(514, 178, 100, 40);
 		selectedCardPanel.add(playButton);
 		
-		panel1arrowRight.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+		panel1arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel1arrowRight.setBounds(481, 393, 46, 48);
 		panel1arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel1.add(panel1arrowRight);
 		
-		panel2arrowLeft.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+		panel2arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel2arrowLeft.setBounds(71, 393, 46, 48);
 		panel2arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowLeft);
 		
-		panel2arrowRight.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+		panel2arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel2arrowRight.setBounds(481, 393, 46, 48);
 		panel2arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowRight);
 		
 		
-		panel3arrowLeft.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+		panel3arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel3arrowLeft.setBounds(71, 393, 46, 48);
 		panel3arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 
 		cardRepresentationPanel3.add(panel3arrowLeft);
-		
-		
-		adam.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/adam.jpg")));
-		adam.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel1.add(adam);
-		
-		ancientracoon.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/ancientracoon.jpg")));
-		ancientracoon.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel1.add(ancientracoon);
-		
-		atmosphere.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/atmosphere.jpg")));
-		atmosphere.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel1.add(atmosphere);
-		
-		buriedarmy.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/buriedarmy.jpg")));
-		buriedarmy.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel1.add(buriedarmy);
-		
-		champ.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/champ.jpg")));
-		champ.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel1.add(champ);
-		
-		dolza.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/dolza.jpg")));
-		dolza.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel1.add(dolza);
-		
-		earthhole.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthhole.jpg")));
-		earthhole.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel1.add(earthhole);
-		
-		earthquake.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthquake.jpg")));
-		earthquake.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel1.add(earthquake);
 
-		eclipse.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/eclipse.jpg")));
-		eclipse.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel1.add(eclipse);
+		bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/bangurath.jpg")));
+		bangurath.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel1.add(bangurath);
 
-		elderdynosaur.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/elderdynosaur.jpg")));
-		elderdynosaur.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel1.add(elderdynosaur);
+		belutax.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/belutax.jpg")));
+		belutax.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel1.add(belutax);
 
-		embedded.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/embedded.jpg")));
-		embedded.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel1.add(embedded);
+		callofnature.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/callofnature.jpg")));
+		callofnature.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel1.add(callofnature);
 
-		fatlord.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/fatlord.jpg")));
-		fatlord.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel1.add(fatlord);
+		centaur.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/centaur.jpg")));
+		centaur.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel1.add(centaur);
 
-		formofmud.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/formofmud.jpg")));
-		formofmud.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel1.add(formofmud);
+		charm.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/charm.jpg")));
+		charm.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel1.add(charm);
 
-		fornax.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/fornax.jpg")));
-		fornax.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel1.add(fornax);
+		corruption.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/corruption.jpg")));
+		corruption.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel1.add(corruption);
 
-		gortag.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/gortag.jpg")));
-		gortag.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel1.add(gortag);
+		deeproots.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/deeproots.jpg")));
+		deeproots.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel1.add(deeproots);
 
-		greatabsorbation.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/greatabsorbation.jpg")));
-		greatabsorbation.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel1.add(greatabsorbation);
+		elvengirl.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/elvengirl.jpg")));
+		elvengirl.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel1.add(elvengirl);
 
-		groundshaker.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/groundshaker.jpg")));
-		groundshaker.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel1.add(groundshaker);
+		fathurux.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/fathurux.jpg")));
+		fathurux.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel1.add(fathurux);
 
-		gruntag.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/gruntag.jpg")));
-		gruntag.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel1.add(gruntag);
+		forestgin.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/forestgin.jpg")));
+		forestgin.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel1.add(forestgin);
 
-		guardianofgolems.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/guardianofgolems.jpg")));
-		guardianofgolems.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel2.add(guardianofgolems);
+		greatcare.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/greatcare.jpg")));
+		greatcare.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel1.add(greatcare);
+
+		greenhippi.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/greenhippi.jpg")));
+		greenhippi.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel1.add(greenhippi);
+
+		halusination.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/halusination.jpg")));
+		halusination.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel1.add(halusination);
+
+		harmonicconvergence
+				.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/harmonicconvergence.jpg")));
+		harmonicconvergence.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel1.add(harmonicconvergence);
 
 		hpbonus.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus.jpg")));
-		hpbonus.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus);
+				.getResource("/images/nature/hpbonus.jpg")));
+		hpbonus.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel1.add(hpbonus);
 
 		hpbonus2.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus2.jpg")));
-		hpbonus2.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus2);
+				.getResource("/images/nature/hpbonus2.jpg")));
+		hpbonus2.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel1.add(hpbonus2);
 
 		hpbonus3.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus3.jpg")));
-		hpbonus3.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus3);
+				.getResource("/images/nature/hpbonus3.jpg")));
+		hpbonus3.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel1.add(hpbonus3);
 
 		hpbonus4.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus4.jpg")));
-		hpbonus4.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus4);
+				.getResource("/images/nature/hpbonus4.jpg")));
+		hpbonus4.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel1.add(hpbonus4);
 
-		hpbonus5.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus5.jpg")));
-		hpbonus5.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus5);
-		
-		kraken.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/kraken.jpg")));
-		kraken.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel2.add(kraken);
+		hpregeneration.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/hpregeneration.jpg")));
+		hpregeneration.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel2.add(hpregeneration);
 
-		lieutenantturtle.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/lieutenantturtle.jpg")));
-		lieutenantturtle.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel2.add(lieutenantturtle);
+		hurrican.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/hurrican.jpg")));
+		hurrican.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel2.add(hurrican);
 
-		lycanranger.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/lycanranger.jpg")));
-		lycanranger.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel2.add(lycanranger);
+		ladytheforest.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/ladytheforest.jpg")));
+		ladytheforest.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel2.add(ladytheforest);
+
+		liquidleaves.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/liquidleaves.jpg")));
+		liquidleaves.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel2.add(liquidleaves);
+
+		magicmushroom.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/magicmushroom.jpg")));
+		magicmushroom.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel2.add(magicmushroom);
+
+		malfurion.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/malfurion.jpg")));
+		malfurion.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel2.add(malfurion);
 
 		manabonus.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/manabonus.jpg")));
-		manabonus.setBounds(324, 138, 80, 111);
+				.getResource("/images/nature/manabonus.jpg")));
+		manabonus.setBounds(20, 138, 80, 111);
 		cardRepresentationPanel2.add(manabonus);
 
-		manofdust.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/manofdust.jpg")));
-		manofdust.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel2.add(manofdust);
+		manabonus2.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/manabonus2.jpg")));
+		manabonus2.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel2.add(manabonus2);
 
-		meteora.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/meteora.jpg")));
-		meteora.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel2.add(meteora);
-
-		nuxia.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/nuxia.jpg")));
-		nuxia.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel2.add(nuxia);
-
-		reflection.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection.jpg")));
-		reflection.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection);
-
-		reflection2.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection2.jpg")));
-		reflection2.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection2);
-
-		rhachor.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/rhachor.jpg")));
-		rhachor.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel2.add(rhachor);
-
-		robotsoldier.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/robotsoldier.jpg")));
-		robotsoldier.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel2.add(robotsoldier);
-
-		rocky.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/rocky.jpg")));
-		rocky.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel2.add(rocky);
-
-		rorox.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/rorox.jpg")));
-		rorox.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel3.add(rorox);
-
-		rustybull.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/rustybull.jpg")));
-		rustybull.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel3.add(rustybull);
-
-		shaker.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/shaker.jpg")));
-		shaker.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel3.add(shaker);
-
-		shieldofbereth.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/shieldofbereth.jpg")));
-		shieldofbereth.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel3.add(shieldofbereth);
-
-		skorka.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/skorka.jpg")));
-		skorka.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel3.add(skorka);
-
-		sorktangthesleepy.setIcon(new ImageIcon(
+		manaregeneration.setIcon(new ImageIcon(
 				NatureDeckCardChoosingFrame.class
-						.getResource("/images/earth/sorktangthesleepy.jpg")));
-		sorktangthesleepy.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel3.add(sorktangthesleepy);
+						.getResource("/images/nature/manaregeneration.jpg")));
+		manaregeneration.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel2.add(manaregeneration);
 
-		splitter.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/splitter.jpg")));
-		splitter.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel3.add(splitter);
+		manaregeneration2.setIcon(new ImageIcon(
+				NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/manaregeneration2.jpg")));
+		manaregeneration2.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel2.add(manaregeneration2);
 
-		stuckinthesand.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/stuckinthesand.jpg")));
-		stuckinthesand.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel3.add(stuckinthesand);
+		manaregeneration3.setIcon(new ImageIcon(
+				NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/manaregeneration3.jpg")));
+		manaregeneration3.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel2.add(manaregeneration3);
 
-		thegreatmammoth.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/thegreatmammoth.jpg")));
-		thegreatmammoth.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel3.add(thegreatmammoth);
+		motherofnature.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/motherofnature.jpg")));
+		motherofnature.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel2.add(motherofnature);
 
-		trochkar.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/trochkar.jpg")));
-		trochkar.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel3.add(trochkar);
+		mrcrocodile.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/mrcrocodile.jpg")));
+		mrcrocodile.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel2.add(mrcrocodile);
 
-		untouchable.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/untouchable.jpg")));
-		untouchable.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel3.add(untouchable);
+		naturalzombie.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/naturalzombie.jpg")));
+		naturalzombie.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel2.add(naturalzombie);
 
-		zildar.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
-				.getResource("/images/earth/zildar.jpg")));
-		zildar.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel3.add(zildar);
+		naturalzone.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/naturalzone.jpg")));
+		naturalzone.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel2.add(naturalzone);
 
-		adam.addMouseListener(new MouseAdapter() {
+		naturetransporter.setIcon(new ImageIcon(
+				NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/naturetransporter.jpg")));
+		naturetransporter.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel2.add(naturetransporter);
+
+		protectoroftherealm
+				.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/protectoroftherealm.jpg")));
+		protectoroftherealm.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel2.add(protectoroftherealm);
+
+		rangerofthevalley.setIcon(new ImageIcon(
+				NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/rangerofthevalley.jpg")));
+		rangerofthevalley.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel2.add(rangerofthevalley);
+
+		rebirth.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/rebirth.jpg")));
+		rebirth.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel3.add(rebirth);
+
+		rootsinthedeep.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/rootsinthedeep.jpg")));
+		rootsinthedeep.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel3.add(rootsinthedeep);
+
+		rotrek.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/rotrek.jpg")));
+		rotrek.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel3.add(rotrek);
+
+		shepherd.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/shepherd.jpg")));
+		shepherd.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel3.add(shepherd);
+
+		shieldofnature.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/shieldofnature.jpg")));
+		shieldofnature.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel3.add(shieldofnature);
+
+		solidarity.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/solidarity.jpg")));
+		solidarity.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel3.add(solidarity);
+
+		souloflife.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/souloflife.jpg")));
+		souloflife.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel3.add(souloflife);
+
+		spiritoftheforest.setIcon(new ImageIcon(
+				NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/spiritoftheforest.jpg")));
+		spiritoftheforest.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel3.add(spiritoftheforest);
+
+		stoyax.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/stoyax.jpg")));
+		stoyax.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel3.add(stoyax);
+
+		thc.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/thc.jpg")));
+		thc.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel3.add(thc);
+
+		thealmighty.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/thealmighty.jpg")));
+		thealmighty.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel3.add(thealmighty);
+
+		thegreathoot.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/thegreathoot.jpg")));
+		thegreathoot.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel3.add(thegreathoot);
+
+		timesofdinosaurs.setIcon(new ImageIcon(
+				NatureDeckCardChoosingFrame.class
+						.getResource("/images/nature/timesofdinosaurs.jpg")));
+		timesofdinosaurs.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel3.add(timesofdinosaurs);
+
+		treeboy.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/treeboy.jpg")));
+		treeboy.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel3.add(treeboy);
+
+		undyingspirit.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/undyingspirit.jpg")));
+		undyingspirit.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel3.add(undyingspirit);
+
+		weezy.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/weezy.jpg")));
+		weezy.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel3.add(weezy);
+
+		whole.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/whole.jpg")));
+		whole.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel3.add(whole);
+
+		woodenwoman.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+				.getResource("/images/nature/woodenwoman.jpg")));
+		woodenwoman.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel3.add(woodenwoman);
+
+		bangurath.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/adamb.jpg")));
+								.getResource("/images/nature/bangurathb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		ancientracoon.addMouseListener(new MouseAdapter() {
+		belutax.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/ancientracoonb.jpg")));
+								.getResource("/images/nature/belutaxb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		atmosphere.addMouseListener(new MouseAdapter() {
+		callofnature.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/atmosphereb.jpg")));
+								.getResource("/images/nature/callofnatureb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		buriedarmy.addMouseListener(new MouseAdapter() {
+		centaur.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/buriedarmyb.jpg")));
+								.getResource("/images/nature/centaurb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		champ.addMouseListener(new MouseAdapter() {
+		charm.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/champb.jpg")));
+								.getResource("/images/nature/charmb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		dolza.addMouseListener(new MouseAdapter() {
+		corruption.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/dolzab.jpg")));
+								.getResource("/images/nature/corruptionb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthhole.addMouseListener(new MouseAdapter() {
+		deeproots.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthholeb.jpg")));
+								.getResource("/images/nature/deeprootsb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthquake.addMouseListener(new MouseAdapter() {
+		elvengirl.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthquakeb.jpg")));
+								.getResource("/images/nature/elvengirlb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		eclipse.addMouseListener(new MouseAdapter() {
+		fathurux.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/eclipseb.jpg")));
+								.getResource("/images/nature/fathuruxb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		elderdynosaur.addMouseListener(new MouseAdapter() {
+		forestgin.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/elderdynosaurb.jpg")));
+								.getResource("/images/nature/forestginb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		embedded.addMouseListener(new MouseAdapter() {
+		greatcare.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/embeddedb.jpg")));
+								.getResource("/images/nature/greatcareb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fatlord.addMouseListener(new MouseAdapter() {
+		greenhippi.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/fatlordb.jpg")));
+								.getResource("/images/nature/greenhippib.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		formofmud.addMouseListener(new MouseAdapter() {
+		halusination.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/formofmudb.jpg")));
+								.getResource("/images/nature/halusinationb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fornax.addMouseListener(new MouseAdapter() {
+		harmonicconvergence.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/fornaxb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		gortag.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/gortagb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		greatabsorbation.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/greatabsorbationb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		groundshaker.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/groundshakerb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		gruntag.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/gruntagb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		guardianofgolems.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/guardianofgolemsb.jpg")));
+								.getResource("/images/nature/harmonicconvergenceb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -648,7 +674,7 @@ public class NatureDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonusb.jpg")));
+								.getResource("/images/nature/hpbonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -657,7 +683,7 @@ public class NatureDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus2b.jpg")));
+								.getResource("/images/nature/hpbonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -666,7 +692,7 @@ public class NatureDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus3b.jpg")));
+								.getResource("/images/nature/hpbonus3b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -675,262 +701,958 @@ public class NatureDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus4b.jpg")));
+								.getResource("/images/nature/hpbonus4b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		hpbonus5.addMouseListener(new MouseAdapter() {
+		hpregeneration.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus5b.jpg")));
+								.getResource("/images/nature/hpregenerationb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		kraken.addMouseListener(new MouseAdapter() {
+		hurrican.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/krakenb.jpg")));
+								.getResource("/images/nature/hurricanb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lieutenantturtle.addMouseListener(new MouseAdapter() {
+		ladytheforest.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/lieutenantturtleb.jpg")));
+								.getResource("/images/nature/ladytheforestb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lycanranger.addMouseListener(new MouseAdapter() {
+		liquidleaves.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/lycanrangerb.jpg")));
+								.getResource("/images/nature/liquidleavesb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
+		magicmushroom.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/magicmushroomb.jpg")));
+				biggerVersionButton.setVisible(true);
 
+			}
+		});
+		malfurion.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/malfurionb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
 		manabonus.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/manabonusb.jpg")));
+								.getResource("/images/nature/manabonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		manofdust.addMouseListener(new MouseAdapter() {
+		manabonus2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/manofdustb.jpg")));
+								.getResource("/images/nature/manabonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		meteora.addMouseListener(new MouseAdapter() {
+		manaregeneration.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/meteorab.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		nuxia.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/nuxiab.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		reflection.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflectionb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		reflection2.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflection2b.jpg")));
+								.getResource("/images/nature/manaregenerationb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
 
-		rhachor.addMouseListener(new MouseAdapter() {
+		manaregeneration2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/rhachorb.jpg")));
+								.getResource("/images/nature/manaregeneration2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		robotsoldier.addMouseListener(new MouseAdapter() {
+		manaregeneration3.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/robotsoldierb.jpg")));
+								.getResource("/images/nature/manaregeneration3b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rocky.addMouseListener(new MouseAdapter() {
+		motherofnature.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/rockyb.jpg")));
+								.getResource("/images/nature/motherofnatureb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rorox.addMouseListener(new MouseAdapter() {
+		mrcrocodile.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/roroxb.jpg")));
+								.getResource("/images/nature/mrcrocodileb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rustybull.addMouseListener(new MouseAdapter() {
+		naturalzombie.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/rustybullb.jpg")));
+								.getResource("/images/nature/naturalzombieb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shaker.addMouseListener(new MouseAdapter() {
+		naturalzone.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/shakerb.jpg")));
+								.getResource("/images/nature/naturalzoneb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shieldofbereth.addMouseListener(new MouseAdapter() {
+
+		naturetransporter.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/shieldofberethb.jpg")));
+								.getResource("/images/nature/naturetransporterb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		skorka.addMouseListener(new MouseAdapter() {
+		protectoroftherealm.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/skorkab.jpg")));
+								.getResource("/images/nature/protectoroftherealmb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		sorktangthesleepy.addMouseListener(new MouseAdapter() {
+		rangerofthevalley.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/sorktangthesleepyb.jpg")));
+								.getResource("/images/nature/rangerofthevalleyb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		splitter.addMouseListener(new MouseAdapter() {
+		rebirth.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/splitterb.jpg")));
+								.getResource("/images/nature/rebirthb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		stuckinthesand.addMouseListener(new MouseAdapter() {
+		rootsinthedeep.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/stuckinthesandb.jpg")));
+								.getResource("/images/nature/rootsinthedeepb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		thegreatmammoth.addMouseListener(new MouseAdapter() {
+		rotrek.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/thegreatmammothb.jpg")));
+								.getResource("/images/nature/rotrekb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		trochkar.addMouseListener(new MouseAdapter() {
+		shepherd.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/trochkarb.jpg")));
+								.getResource("/images/nature/shepherdb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		untouchable.addMouseListener(new MouseAdapter() {
+		shieldofnature.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/untouchableb.jpg")));
+								.getResource("/images/nature/shieldofnatureb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		zildar.addMouseListener(new MouseAdapter() {
+		solidarity.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						NatureDeckCardChoosingFrame.class
-								.getResource("/images/earth/zildarb.jpg")));
+								.getResource("/images/nature/solidarityb.jpg")));
 				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		souloflife.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/souloflifeb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		spiritoftheforest.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/spiritoftheforestb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		stoyax.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/stoyaxb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		thc.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/thcb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		thealmighty.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/thealmightyb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		thegreathoot.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/thegreathootb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		timesofdinosaurs.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/timesofdinosaursb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		treeboy.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/treeboyb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		undyingspirit.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/undyingspiritb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		weezy.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/weezyb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		whole.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/wholeb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		woodenwoman.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/woodenwomanb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+
+		
+		bangurath.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/bangurath.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		
+		belutax.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/belutax.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				belutax.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		callofnature.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/callofnature.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				callofnature.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		centaur.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/centaur.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				centaur.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		charm.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/charm.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				charm.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		corruption.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/corruption.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				corruption.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		deeproots.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/deeproots.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				deeproots.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		elvengirl.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/elvengirl.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				elvengirl.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		fathurux.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/fathurux.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				fathurux.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		forestgin.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/forestgin.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				forestgin.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		greatcare.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/greatcare.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				greatcare.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		greenhippi.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/greenhippi.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				greenhippi.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		halusination.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/halusination.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				halusination.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		harmonicconvergence.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/harmonicconvergence.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				harmonicconvergence.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		hpbonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/hpbonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		hpbonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/hpbonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus2.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpbonus3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/hpbonus3.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus3.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpbonus4.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/hpbonus4.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus4.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpregeneration.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/hpregeneration.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpregeneration.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hurrican.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/hurrican.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hurrican.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		ladytheforest.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/ladytheforest.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				ladytheforest.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		liquidleaves.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/liquidleaves.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				liquidleaves.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		magicmushroom.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/magicmushroom.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				magicmushroom.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		malfurion.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/malfurion.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manabonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/manabonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manabonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/manabonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manaregeneration.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/manaregeneration.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manaregeneration.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+
+		manaregeneration2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/manaregeneration2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manaregeneration2.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		manaregeneration3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/manaregeneration3.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manaregeneration3.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		motherofnature.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/motherofnature.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				motherofnature.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		mrcrocodile.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/mrcrocodile.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				mrcrocodile.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		naturalzombie.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/naturalzombie.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				naturalzombie.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		naturalzone.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/naturalzone.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				naturalzone.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+
+		naturetransporter.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/naturetransporter.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				naturetransporter.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		protectoroftherealm.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/protectoroftherealm.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				protectoroftherealm.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		rangerofthevalley.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/rangerofthevalley.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				rangerofthevalley.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		rebirth.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/rebirth.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				rebirth.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		rootsinthedeep.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/rootsinthedeep.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				rootsinthedeep.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		rotrek.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/rotrek.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		shepherd.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/shepherd.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		shieldofnature.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/shieldofnature.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		solidarity.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/solidarity.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		souloflife.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/souloflife.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		spiritoftheforest.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/spiritoftheforest.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		stoyax.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/stoyax.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				stoyax.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		thc.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/thc.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				thc.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		thealmighty.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/thealmighty.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				thealmighty.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		thegreathoot.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/thegreathoot.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				thegreathoot.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		timesofdinosaurs.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/timesofdinosaurs.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				timesofdinosaurs.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		treeboy.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/treeboy.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				treeboy.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		undyingspirit.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/undyingspirit.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				undyingspirit.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		weezy.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/weezy.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				weezy.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		whole.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/whole.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				whole.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		woodenwoman.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						NatureDeckCardChoosingFrame.class
+								.getResource("/images/nature/woodenwoman.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				woodenwoman.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
 
 			}
 		});
 
 	}
-}
-
-class ImagePanel extends JPanel {
-
-	private Image img;
-
-	public ImagePanel(ImageIcon imageIcon) {
-		this(new ImageIcon().getImage());
-	}
-
-	public ImagePanel(Image img) {
-		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-		setPreferredSize(size);
-		setMinimumSize(size);
-		setMaximumSize(size);
-		setSize(size);
-		setLayout(null);
-	}
-
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
-
 }
