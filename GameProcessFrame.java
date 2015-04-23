@@ -1,7 +1,4 @@
 import java.awt.Color;
-import java.awt.Insets;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 import javax.swing.ImageIcon;
