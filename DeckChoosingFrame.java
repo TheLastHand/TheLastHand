@@ -1,7 +1,4 @@
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +6,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -102,8 +98,12 @@ public class DeckChoosingFrame {
 		btnNewButton.setMargin(new Insets(0, 0, 0, 0));
 		btnNewButton.setBorder(null);
 
+		
 		biggerVersionButton.setVisible(false);
 
+		
+	
+		
 		earthDeckButton.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton
@@ -165,36 +165,16 @@ public class DeckChoosingFrame {
 
 					String command = "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe http://inciswf.com/127283744663.swf ";
 
-					Process link = Runtime.getRuntime().exec(command);
+					Runtime.getRuntime().exec(command);
 				} catch (Exception ex) {
 					System.out.println("cannot execute command. " + ex);
 				}
 			}
 		});
+		
+		
+		deckChoosingFrame.repaint();
 
 	}
 }
 
-class ImagePanel extends JPanel {
-
-	private Image img;
-
-	public ImagePanel(String img) {
-		this(new ImageIcon(img).getImage());
-	}
-
-	public ImagePanel(Image img) {
-		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-		setPreferredSize(size);
-		setMinimumSize(size);
-		setMaximumSize(size);
-		setSize(size);
-		setLayout(null);
-	}
-
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
-
-}
