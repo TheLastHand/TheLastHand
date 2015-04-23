@@ -1,11 +1,9 @@
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,16 +19,21 @@ public class UnderworldDeckCardChoosingFrame {
 	public static JPanel cardRepresentationPanel1 = new JPanel();
 	public static JPanel cardRepresentationPanel2 = new JPanel();
 	public static JPanel cardRepresentationPanel3 = new JPanel();
+	public static JPanel cardRepresentationPanel4 = new JPanel();
 	protected static JPanel biggerCardPanel = new JPanel();
 	protected static JPanel selectedCardPanel = new JPanel();
 	protected static JPanel chatPanel = new JPanel();
 
 	static final JButton panel1arrowRight = new JButton();
 	static final JButton panel2arrowRight = new JButton();
+	static final JButton panel3arrowRight = new JButton();
 	static final JButton panel2arrowLeft = new JButton();
 	static final JButton panel3arrowLeft = new JButton();
+	static final JButton panel4arrowLeft = new JButton();
 	static final JButton playButton = new JButton();
-
+	
+	private static int key = 0;
+	private static final JButton[] selectedCards = new JButton[12];
 	private static final JButton selectedCard1 = new JButton();
 	private static final JButton selectedCard2 = new JButton();
 	private static final JButton selectedCard3 = new JButton();
@@ -45,54 +48,64 @@ public class UnderworldDeckCardChoosingFrame {
 	private static final JButton replacementCard4 = new JButton();
 	private static final JButton biggerVersionButton = new JButton();
 
-	private static final JButton adam = new JButton();
-	private static final JButton ancientracoon = new JButton();
-	private static final JButton atmosphere = new JButton();
-	private static final JButton buriedarmy = new JButton();
-	private static final JButton champ = new JButton();
-	private static final JButton dolza = new JButton();
-	private static final JButton earthhole = new JButton();
-	private static final JButton earthquake = new JButton();
-	private static final JButton eclipse = new JButton();
-	private static final JButton elderdynosaur = new JButton();
-	private static final JButton embedded = new JButton();
-	private static final JButton fatlord = new JButton();
-	private static final JButton formofmud = new JButton();
-	private static final JButton fornax = new JButton();
-	private static final JButton gortag = new JButton();
-	private static final JButton greatabsorbation = new JButton();
-	private static final JButton groundshaker = new JButton();
-	private static final JButton gruntag = new JButton();
-	private static final JButton guardianofgolems = new JButton();
+	private static final JButton absenthia = new JButton();
+	private static final JButton ancientdemonic = new JButton();
+	private static final JButton angelofdeath = new JButton();
+	private static final JButton armorofthedarksoul = new JButton();
+	private static final JButton arpetios = new JButton();
+	private static final JButton badhabit = new JButton();
+	private static final JButton badluck = new JButton();
+	private static final JButton bladeofdarklord = new JButton();
+	private static final JButton bloodcholic = new JButton();
+	private static final JButton boatmanofdarkness = new JButton();
+	private static final JButton callfromdarkness = new JButton();
+	private static final JButton cunningman = new JButton();
+	private static final JButton darkmagic = new JButton();
+	private static final JButton darkreflection = new JButton();
+	private static final JButton demonic = new JButton();
+	private static final JButton devilsadvocat = new JButton();
+	private static final JButton fatalbonds = new JButton();
+	private static final JButton fear = new JButton();
+	private static final JButton gorillaofhell = new JButton();
+	private static final JButton hellhounds = new JButton();
 	private static final JButton hpbonus = new JButton();
 	private static final JButton hpbonus2 = new JButton();
 	private static final JButton hpbonus3 = new JButton();
 	private static final JButton hpbonus4 = new JButton();
-	private static final JButton hpbonus5 = new JButton();
-	private static final JButton kraken = new JButton();
-	private static final JButton lieutenantturtle = new JButton();
-	private static final JButton lycanranger = new JButton();
+	private static final JButton illusion = new JButton();
+	private static final JButton kahkasso = new JButton();
+	private static final JButton khaduun = new JButton();
+	private static final JButton khultzar = new JButton();
+	private static final JButton lordfear = new JButton();
 	private static final JButton manabonus = new JButton();
-	private static final JButton manofdust = new JButton();
-	private static final JButton meteora = new JButton();
-	private static final JButton nuxia = new JButton();
-	private static final JButton reflection = new JButton();
-	private static final JButton reflection2 = new JButton();
-	private static final JButton rhachor = new JButton();
-	private static final JButton robotsoldier = new JButton();
-	private static final JButton rocky = new JButton();
-	private static final JButton rorox = new JButton();
-	private static final JButton rustybull = new JButton();
-	private static final JButton shaker = new JButton();
-	private static final JButton shieldofbereth = new JButton();
-	private static final JButton skorka = new JButton();
-	private static final JButton sorktangthesleepy = new JButton();
-	private static final JButton splitter = new JButton();
-	private static final JButton stuckinthesand = new JButton();
-	private static final JButton thegreatmammoth = new JButton();
-	private static final JButton trochkar = new JButton();
-	private static final JButton untouchable = new JButton();
-	private static final JButton zildar = new JButton();
+	private static final JButton manabonus2 = new JButton();
+	private static final JButton manaregeneration = new JButton();
+	private static final JButton manaregeneration2 = new JButton();
+	private static final JButton manaregeneration3 = new JButton();
+	private static final JButton normorepain = new JButton();
+	private static final JButton pickpocket = new JButton();
+	private static final JButton poisonofdarkness = new JButton();
+	private static final JButton psychkick = new JButton();
+	private static final JButton purgatory = new JButton();
+	private static final JButton quatsiah = new JButton();
+	private static final JButton rasputin = new JButton();
+	private static final JButton sacredritual = new JButton();
+	private static final JButton servantofdarklord = new JButton();
+	private static final JButton shieldofdarkness = new JButton();
+	private static final JButton shiku = new JButton();
+	private static final JButton snakehead = new JButton();
+	private static final JButton soulreaper = new JButton();
+	private static final JButton spiderking = new JButton();
+	private static final JButton steelofhell = new JButton();
+	private static final JButton suiciderskull = new JButton();
+	private static final JButton surrogates = new JButton();
+	private static final JButton thefirstofpagans = new JButton();
+	private static final JButton throneofdarkness = new JButton();
+	private static final JButton unknown = new JButton();
+	private static final JButton upsidedown = new JButton();
+	private static final JButton voodoo = new JButton();
+	private static final JButton zitoki = new JButton();
+	private static final JButton zombieinvasion = new JButton();
 
 	/**
 	 * @wbp.parser.entryPoint
@@ -100,7 +113,7 @@ public class UnderworldDeckCardChoosingFrame {
 	public static void CardChoosingFrame() throws IOException {
 		ImagePanel gameWindowPanel = new ImagePanel(
 				new ImageIcon(UnderworldDeckCardChoosingFrame.class
-						.getResource("/images/earthdeckbackground.jpg"))
+						.getResource("/images/underworlddeckbackground.jpg"))
 						.getImage());
 
 		cardChoosingFrame.setSize(1000, 720);
@@ -128,55 +141,83 @@ public class UnderworldDeckCardChoosingFrame {
 		gameWindowPanel.add(selectedCardPanel);
 		selectedCardPanel.setLayout(null);
 		selectedCardPanel.setBackground(new Color(0, 0, 0, 0));
+		
+		selectedCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard1.setBounds(75, 11, 80, 111);
-
+		
 		selectedCardPanel.add(selectedCard1);
+		selectedCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard2.setBounds(122, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard2);
+		selectedCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard3.setBounds(165, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard3);
+		selectedCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard4.setBounds(212, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard4);
+		selectedCard5.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard5.setBounds(255, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard5);
+		selectedCard6.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard6.setBounds(302, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard6);
+		selectedCard7.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard7.setBounds(345, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard7);
+		selectedCard8.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard8.setBounds(392, 11, 80, 111);
 
+		
+		selectedCards[0] = selectedCard1;
+		selectedCards[1] = selectedCard2;
+		selectedCards[2] = selectedCard3;
+		selectedCards[3] = selectedCard4;
+		selectedCards[4] = selectedCard5;
+		selectedCards[5] = selectedCard6;
+		selectedCards[6] = selectedCard7;
+		selectedCards[7] = selectedCard8;
+		selectedCards[8] = replacementCard1;
+		selectedCards[9] = replacementCard2;
+		selectedCards[10] = replacementCard3;
+		selectedCards[11] = replacementCard4;
+						
 		selectedCardPanel.add(selectedCard8);
+		
+		replacementCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard1.setBounds(75, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard1);
+		
+		replacementCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard2.setBounds(122, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard2);
+		
+		replacementCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard3.setBounds(165, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard3);
+		
+		replacementCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard4.setBounds(212, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard4);
-
-		selectedCard1.setVisible(false);
-		selectedCard2.setVisible(false);
-		selectedCard3.setVisible(false);
-		selectedCard4.setVisible(false);
-		selectedCard5.setVisible(false);
-		selectedCard6.setVisible(false);
-		selectedCard7.setVisible(false);
-		selectedCard8.setVisible(false);
-		replacementCard1.setVisible(false);
-		replacementCard2.setVisible(false);
-		replacementCard3.setVisible(false);
-		replacementCard4.setVisible(false);
+		
+		
+		selectedCard1.setVisible(true);
+		selectedCard2.setVisible(true);
+		selectedCard3.setVisible(true);
+		selectedCard4.setVisible(true);
+		selectedCard5.setVisible(true);
+		selectedCard6.setVisible(true);
+		selectedCard7.setVisible(true);
+		selectedCard8.setVisible(true);
+		replacementCard1.setVisible(true);
+		replacementCard2.setVisible(true);
+		replacementCard3.setVisible(true);
+		replacementCard4.setVisible(true);
 
 		chatPanel.setBounds(619, 442, 376, 229);
 		gameWindowPanel.add(chatPanel);
@@ -199,447 +240,544 @@ public class UnderworldDeckCardChoosingFrame {
 		cardRepresentationPanel3.setBounds(0, 0, 624, 440);
 		gameWindowPanel.add(cardRepresentationPanel3);
 		cardRepresentationPanel3.setVisible(false);		
+		
+		cardRepresentationPanel4.setLayout(null);
+		cardRepresentationPanel4.setBackground(new Color(0, 0, 0, 0));
+		cardRepresentationPanel4.setBounds(0, 0, 624, 440);
+		gameWindowPanel.add(cardRepresentationPanel4);
+		cardRepresentationPanel4.setVisible(false);		
 
-		playButton.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+		playButton.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/playButton.png")));
 		playButton.setBounds(514, 178, 100, 40);
 		selectedCardPanel.add(playButton);
 		
-		panel1arrowRight.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+		panel1arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel1arrowRight.setBounds(481, 393, 46, 48);
 		panel1arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel1.add(panel1arrowRight);
 		
-		panel2arrowLeft.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+		panel2arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel2arrowLeft.setBounds(71, 393, 46, 48);
 		panel2arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowLeft);
 		
-		panel2arrowRight.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+		panel2arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel2arrowRight.setBounds(481, 393, 46, 48);
 		panel2arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowRight);
 		
 		
-		panel3arrowLeft.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+		panel3arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel3arrowLeft.setBounds(71, 393, 46, 48);
 		panel3arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 
 		cardRepresentationPanel3.add(panel3arrowLeft);
-		
-		
-		adam.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/adam.jpg")));
-		adam.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel1.add(adam);
-		
-		ancientracoon.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/ancientracoon.jpg")));
-		ancientracoon.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel1.add(ancientracoon);
-		
-		atmosphere.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/atmosphere.jpg")));
-		atmosphere.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel1.add(atmosphere);
-		
-		buriedarmy.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/buriedarmy.jpg")));
-		buriedarmy.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel1.add(buriedarmy);
-		
-		champ.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/champ.jpg")));
-		champ.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel1.add(champ);
-		
-		dolza.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/dolza.jpg")));
-		dolza.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel1.add(dolza);
-		
-		earthhole.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthhole.jpg")));
-		earthhole.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel1.add(earthhole);
-		
-		earthquake.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthquake.jpg")));
-		earthquake.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel1.add(earthquake);
 
-		eclipse.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/eclipse.jpg")));
-		eclipse.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel1.add(eclipse);
+		panel3arrowRight.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/arrowRight.png")));
+		panel3arrowRight.setBounds(481, 393, 46, 48);
+		panel3arrowRight.setMargin(new Insets(0, 0, 0, 0));
+		cardRepresentationPanel3.add(panel3arrowRight);
 
-		elderdynosaur.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/elderdynosaur.jpg")));
-		elderdynosaur.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel1.add(elderdynosaur);
+		panel4arrowLeft.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/arrowLeft.png")));
+		panel4arrowLeft.setBounds(71, 393, 46, 48);
+		panel4arrowLeft.setMargin(new Insets(0, 0, 0, 0));
+		cardRepresentationPanel4.add(panel4arrowLeft);
 
-		embedded.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/embedded.jpg")));
-		embedded.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel1.add(embedded);
+		absenthia.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/absenthia.jpg")));
+		absenthia.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel1.add(absenthia);
 
-		fatlord.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/fatlord.jpg")));
-		fatlord.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel1.add(fatlord);
+		ancientdemonic.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/ancientdemonic.jpg")));
+		ancientdemonic.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel1.add(ancientdemonic);
 
-		formofmud.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/formofmud.jpg")));
-		formofmud.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel1.add(formofmud);
+		angelofdeath.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/angelofdeath.jpg")));
+		angelofdeath.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel1.add(angelofdeath);
 
-		fornax.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/fornax.jpg")));
-		fornax.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel1.add(fornax);
+		armorofthedarksoul.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/armorofthedarksoul.jpg")));
+		armorofthedarksoul.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel1.add(armorofthedarksoul);
 
-		gortag.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/gortag.jpg")));
-		gortag.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel1.add(gortag);
+		arpetios.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/arpetios.jpg")));
+		arpetios.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel1.add(arpetios);
 
-		greatabsorbation.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/greatabsorbation.jpg")));
-		greatabsorbation.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel1.add(greatabsorbation);
+		badhabit.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/badhabit.jpg")));
+		badhabit.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel1.add(badhabit);
 
-		groundshaker.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/groundshaker.jpg")));
-		groundshaker.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel1.add(groundshaker);
+		badluck.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/badluck.jpg")));
+		badluck.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel1.add(badluck);
 
-		gruntag.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/gruntag.jpg")));
-		gruntag.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel1.add(gruntag);
+		bladeofdarklord.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/bladeofdarklord.jpg")));
+		bladeofdarklord.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel1.add(bladeofdarklord);
 
-		guardianofgolems.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/guardianofgolems.jpg")));
-		guardianofgolems.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel2.add(guardianofgolems);
+		bloodcholic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/bloodcholic.jpg")));
+		bloodcholic.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel1.add(bloodcholic);
+
+		boatmanofdarkness.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/boatmanofdarkness.jpg")));
+		boatmanofdarkness.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel1.add(boatmanofdarkness);
+
+		callfromdarkness.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/callfromdarkness.jpg")));
+		callfromdarkness.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel1.add(callfromdarkness);
+
+		cunningman.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/cunningman.jpg")));
+		cunningman.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel1.add(cunningman);
+
+		darkmagic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/darkmagic.jpg")));
+		darkmagic.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel1.add(darkmagic);
+
+		darkreflection.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/darkreflection.jpg")));
+		darkreflection.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel1.add(darkreflection);
+
+		demonic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/demonic.jpg")));
+		demonic.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel1.add(demonic);
+
+		devilsadvocat.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/devilsadvocat.jpg")));
+		devilsadvocat.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel1.add(devilsadvocat);
+
+		fatalbonds.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/fatalbonds.jpg")));
+		fatalbonds.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel1.add(fatalbonds);
+
+		fear.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/fear.jpg")));
+		fear.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel1.add(fear);
+
+		gorillaofhell.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/gorillaofhell.jpg")));
+		gorillaofhell.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel2.add(gorillaofhell);
+
+		hellhounds.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/hellhounds.jpg")));
+		hellhounds.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel2.add(hellhounds);
 
 		hpbonus.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus.jpg")));
-		hpbonus.setBounds(120, 11, 80, 111);
+				.getResource("/images/underworld/hpbonus.jpg")));
+		hpbonus.setBounds(221, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus);
 
 		hpbonus2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus2.jpg")));
-		hpbonus2.setBounds(221, 11, 80, 111);
+				.getResource("/images/underworld/hpbonus2.jpg")));
+		hpbonus2.setBounds(324, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus2);
 
 		hpbonus3.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus3.jpg")));
-		hpbonus3.setBounds(324, 11, 80, 111);
+				.getResource("/images/underworld/hpbonus3.jpg")));
+		hpbonus3.setBounds(422, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus3);
 
 		hpbonus4.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus4.jpg")));
-		hpbonus4.setBounds(422, 11, 80, 111);
+				.getResource("/images/underworld/hpbonus4.jpg")));
+		hpbonus4.setBounds(522, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus4);
 
-		hpbonus5.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus5.jpg")));
-		hpbonus5.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus5);
-		
-		kraken.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/kraken.jpg")));
-		kraken.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel2.add(kraken);
+		illusion.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/illusion.jpg")));
+		illusion.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel2.add(illusion);
 
-		lieutenantturtle.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/lieutenantturtle.jpg")));
-		lieutenantturtle.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel2.add(lieutenantturtle);
+		kahkasso.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/kahkasso.jpg")));
+		kahkasso.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel2.add(kahkasso);
 
-		lycanranger.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/lycanranger.jpg")));
-		lycanranger.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel2.add(lycanranger);
+		khaduun.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/khaduun.jpg")));
+		khaduun.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel2.add(khaduun);
+
+		khultzar.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/khultzar.jpg")));
+		khultzar.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel2.add(khultzar);
+
+		lordfear.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/lordfear.jpg")));
+		lordfear.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel2.add(lordfear);
 
 		manabonus.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/manabonus.jpg")));
-		manabonus.setBounds(324, 138, 80, 111);
+				.getResource("/images/underworld/manabonus.jpg")));
+		manabonus.setBounds(522, 138, 80, 111);
 		cardRepresentationPanel2.add(manabonus);
 
-		manofdust.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/manofdust.jpg")));
-		manofdust.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel2.add(manofdust);
+		manabonus2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/manabonus2.jpg")));
+		manabonus2.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel2.add(manabonus2);
 
-		meteora.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/meteora.jpg")));
-		meteora.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel2.add(meteora);
-
-		nuxia.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/nuxia.jpg")));
-		nuxia.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel2.add(nuxia);
-
-		reflection.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection.jpg")));
-		reflection.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection);
-
-		reflection2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection2.jpg")));
-		reflection2.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection2);
-
-		rhachor.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/rhachor.jpg")));
-		rhachor.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel2.add(rhachor);
-
-		robotsoldier.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/robotsoldier.jpg")));
-		robotsoldier.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel2.add(robotsoldier);
-
-		rocky.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/rocky.jpg")));
-		rocky.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel2.add(rocky);
-
-		rorox.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/rorox.jpg")));
-		rorox.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel3.add(rorox);
-
-		rustybull.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/rustybull.jpg")));
-		rustybull.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel3.add(rustybull);
-
-		shaker.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/shaker.jpg")));
-		shaker.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel3.add(shaker);
-
-		shieldofbereth.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/shieldofbereth.jpg")));
-		shieldofbereth.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel3.add(shieldofbereth);
-
-		skorka.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/skorka.jpg")));
-		skorka.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel3.add(skorka);
-
-		sorktangthesleepy.setIcon(new ImageIcon(
+		manaregeneration.setIcon(new ImageIcon(
 				UnderworldDeckCardChoosingFrame.class
-						.getResource("/images/earth/sorktangthesleepy.jpg")));
-		sorktangthesleepy.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel3.add(sorktangthesleepy);
+						.getResource("/images/underworld/manaregeneration.jpg")));
+		manaregeneration.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel2.add(manaregeneration);
 
-		splitter.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/splitter.jpg")));
-		splitter.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel3.add(splitter);
+		manaregeneration2.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/manaregeneration2.jpg")));
+		manaregeneration2.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel2.add(manaregeneration2);
 
-		stuckinthesand.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/stuckinthesand.jpg")));
-		stuckinthesand.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel3.add(stuckinthesand);
+		manaregeneration3.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/manaregeneration3.jpg")));
+		manaregeneration3.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel2.add(manaregeneration3);
 
-		thegreatmammoth.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/thegreatmammoth.jpg")));
-		thegreatmammoth.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel3.add(thegreatmammoth);
+		normorepain.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/normorepain.jpg")));
+		normorepain.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel2.add(normorepain);
 
-		trochkar.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/trochkar.jpg")));
-		trochkar.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel3.add(trochkar);
+		pickpocket.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/pickpocket.jpg")));
+		pickpocket.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel2.add(pickpocket);
 
-		untouchable.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/untouchable.jpg")));
-		untouchable.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel3.add(untouchable);
+		poisonofdarkness.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/poisonofdarkness.jpg")));
+		poisonofdarkness.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel3.add(poisonofdarkness);
 
-		zildar.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
-				.getResource("/images/earth/zildar.jpg")));
-		zildar.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel3.add(zildar);
+		psychkick.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/psychkick.jpg")));
+		psychkick.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel3.add(psychkick);
 
-		adam.addMouseListener(new MouseAdapter() {
+		purgatory.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/purgatory.jpg")));
+		purgatory.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel3.add(purgatory);
+
+		quatsiah.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/quatsiah.jpg")));
+		quatsiah.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel3.add(quatsiah);
+
+		rasputin.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/rasputin.jpg")));
+		rasputin.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel3.add(rasputin);
+
+		sacredritual.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/sacredritual.jpg")));
+		sacredritual.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel3.add(sacredritual);
+
+		servantofdarklord.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/servantofdarklord.jpg")));
+		servantofdarklord.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel3.add(servantofdarklord);
+
+		shieldofdarkness.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/shieldofdarkness.jpg")));
+		shieldofdarkness.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel3.add(shieldofdarkness);
+
+		shiku.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/shiku.jpg")));
+		shiku.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel3.add(shiku);
+
+		snakehead.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/snakehead.jpg")));
+		snakehead.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel3.add(snakehead);
+
+		soulreaper.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/soulreaper.jpg")));
+		soulreaper.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel3.add(soulreaper);
+
+		spiderking.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/spiderking.jpg")));
+		spiderking.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel3.add(spiderking);
+
+		steelofhell.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/steelofhell.jpg")));
+		steelofhell.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel3.add(steelofhell);
+
+		suiciderskull.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/suiciderskull.jpg")));
+		suiciderskull.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel3.add(suiciderskull);
+
+		surrogates.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/surrogates.jpg")));
+		surrogates.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel3.add(surrogates);
+
+		thefirstofpagans.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/thefirstofpagans.jpg")));
+		thefirstofpagans.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel3.add(thefirstofpagans);
+
+		throneofdarkness.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/throneofdarkness.jpg")));
+		throneofdarkness.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel3.add(throneofdarkness);
+
+		unknown.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/unknown.jpg")));
+		unknown.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel3.add(unknown);
+
+		upsidedown.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/upsidedown.jpg")));
+		upsidedown.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel4.add(upsidedown);
+
+		voodoo.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/voodoo.jpg")));
+		voodoo.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel4.add(voodoo);
+
+		zitoki.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+				.getResource("/images/underworld/zitoki.jpg")));
+		zitoki.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel4.add(zitoki);
+
+		zombieinvasion.setIcon(new ImageIcon(
+				UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/underworld/zombieinvasion.jpg")));
+		zombieinvasion.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel4.add(zombieinvasion);
+
+		absenthia.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/adamb.jpg")));
+								.getResource("/images/underworld/absenthiab.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		ancientracoon.addMouseListener(new MouseAdapter() {
+		ancientdemonic.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/ancientracoonb.jpg")));
+								.getResource("/images/underworld/ancientdemonicb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		atmosphere.addMouseListener(new MouseAdapter() {
+		angelofdeath.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/atmosphereb.jpg")));
+								.getResource("/images/underworld/angelofdeathb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		buriedarmy.addMouseListener(new MouseAdapter() {
+		armorofthedarksoul.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/buriedarmyb.jpg")));
+								.getResource("/images/underworld/armorofthedarksoulb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		champ.addMouseListener(new MouseAdapter() {
+		arpetios.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/champb.jpg")));
+								.getResource("/images/underworld/arpetiosb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		dolza.addMouseListener(new MouseAdapter() {
+		badhabit.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/dolzab.jpg")));
+								.getResource("/images/underworld/badhabitb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthhole.addMouseListener(new MouseAdapter() {
+		badluck.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthholeb.jpg")));
+								.getResource("/images/underworld/badluckb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthquake.addMouseListener(new MouseAdapter() {
+		bladeofdarklord.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthquakeb.jpg")));
+								.getResource("/images/underworld/bladeofdarklordb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		eclipse.addMouseListener(new MouseAdapter() {
+		bloodcholic.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/eclipseb.jpg")));
+								.getResource("/images/underworld/bloodcholicb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		elderdynosaur.addMouseListener(new MouseAdapter() {
+		boatmanofdarkness.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/elderdynosaurb.jpg")));
+								.getResource("/images/underworld/boatmanofdarknessb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		embedded.addMouseListener(new MouseAdapter() {
+		callfromdarkness.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/embeddedb.jpg")));
+								.getResource("/images/underworld/callfromdarknessb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fatlord.addMouseListener(new MouseAdapter() {
+		cunningman.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/fatlordb.jpg")));
+								.getResource("/images/underworld/cunningmanb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		formofmud.addMouseListener(new MouseAdapter() {
+		darkmagic.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/formofmudb.jpg")));
+								.getResource("/images/underworld/darkmagicb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fornax.addMouseListener(new MouseAdapter() {
+		darkreflection.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/fornaxb.jpg")));
+								.getResource("/images/underworld/darkreflectionb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		gortag.addMouseListener(new MouseAdapter() {
+		demonic.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/gortagb.jpg")));
+								.getResource("/images/underworld/demonicb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		greatabsorbation.addMouseListener(new MouseAdapter() {
+		devilsadvocat.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/greatabsorbationb.jpg")));
+								.getResource("/images/underworld/devilsadvocatb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		groundshaker.addMouseListener(new MouseAdapter() {
+		fatalbonds.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/groundshakerb.jpg")));
+								.getResource("/images/underworld/fatalbondsb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		gruntag.addMouseListener(new MouseAdapter() {
+		fear.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/gruntagb.jpg")));
+								.getResource("/images/underworld/fearb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		guardianofgolems.addMouseListener(new MouseAdapter() {
+		gorillaofhell.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/guardianofgolemsb.jpg")));
+								.getResource("/images/underworld/gorillaofhellb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		hellhounds.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/hellhoundsb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -648,7 +786,7 @@ public class UnderworldDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonusb.jpg")));
+								.getResource("/images/underworld/hpbonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -657,7 +795,7 @@ public class UnderworldDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus2b.jpg")));
+								.getResource("/images/underworld/hpbonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -666,7 +804,7 @@ public class UnderworldDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus3b.jpg")));
+								.getResource("/images/underworld/hpbonus3b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -675,262 +813,988 @@ public class UnderworldDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus4b.jpg")));
+								.getResource("/images/underworld/hpbonus4b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		hpbonus5.addMouseListener(new MouseAdapter() {
+		illusion.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus5b.jpg")));
+								.getResource("/images/underworld/illusionb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		kraken.addMouseListener(new MouseAdapter() {
+		kahkasso.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/krakenb.jpg")));
+								.getResource("/images/underworld/kahkassob.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lieutenantturtle.addMouseListener(new MouseAdapter() {
+		khaduun.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/lieutenantturtleb.jpg")));
+								.getResource("/images/underworld/khaduunb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lycanranger.addMouseListener(new MouseAdapter() {
+
+		khultzar.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/lycanrangerb.jpg")));
+								.getResource("/images/underworld/khultzarb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
+		lordfear.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/lordfearb.jpg")));
+				biggerVersionButton.setVisible(true);
 
+			}
+		});
 		manabonus.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/manabonusb.jpg")));
+								.getResource("/images/underworld/manabonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		manofdust.addMouseListener(new MouseAdapter() {
+		manabonus2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/manofdustb.jpg")));
+								.getResource("/images/underworld/manabonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		meteora.addMouseListener(new MouseAdapter() {
+		manaregeneration.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/meteorab.jpg")));
+								.getResource("/images/underworld/manaregenerationb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		nuxia.addMouseListener(new MouseAdapter() {
+		manaregeneration2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/nuxiab.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		reflection.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflectionb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		reflection2.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflection2b.jpg")));
+								.getResource("/images/underworld/manaregeneration2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
 
-		rhachor.addMouseListener(new MouseAdapter() {
+		manaregeneration3.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/rhachorb.jpg")));
+								.getResource("/images/underworld/manaregeneration3b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		robotsoldier.addMouseListener(new MouseAdapter() {
+		normorepain.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/robotsoldierb.jpg")));
+								.getResource("/images/underworld/normorepainb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rocky.addMouseListener(new MouseAdapter() {
+		pickpocket.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/rockyb.jpg")));
+								.getResource("/images/underworld/pickpocketb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rorox.addMouseListener(new MouseAdapter() {
+		poisonofdarkness.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/roroxb.jpg")));
+								.getResource("/images/underworld/poisonofdarknessb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rustybull.addMouseListener(new MouseAdapter() {
+		psychkick.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/rustybullb.jpg")));
+								.getResource("/images/underworld/psychkickb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shaker.addMouseListener(new MouseAdapter() {
+		purgatory.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/shakerb.jpg")));
+								.getResource("/images/underworld/purgatoryb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shieldofbereth.addMouseListener(new MouseAdapter() {
+		quatsiah.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/shieldofberethb.jpg")));
+								.getResource("/images/underworld/quatsiahb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		skorka.addMouseListener(new MouseAdapter() {
+		rasputin.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/skorkab.jpg")));
+								.getResource("/images/underworld/rasputinb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		sorktangthesleepy.addMouseListener(new MouseAdapter() {
+		sacredritual.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/sorktangthesleepyb.jpg")));
+								.getResource("/images/underworld/sacredritualb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		splitter.addMouseListener(new MouseAdapter() {
+		servantofdarklord.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/splitterb.jpg")));
+								.getResource("/images/underworld/servantofdarklordb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		stuckinthesand.addMouseListener(new MouseAdapter() {
+		shieldofdarkness.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/stuckinthesandb.jpg")));
+								.getResource("/images/underworld/shieldofdarknessb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		thegreatmammoth.addMouseListener(new MouseAdapter() {
+		shiku.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/thegreatmammothb.jpg")));
+								.getResource("/images/underworld/shikub.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		trochkar.addMouseListener(new MouseAdapter() {
+		snakehead.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/trochkarb.jpg")));
+								.getResource("/images/underworld/snakeheadb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		untouchable.addMouseListener(new MouseAdapter() {
+		soulreaper.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/untouchableb.jpg")));
+								.getResource("/images/underworld/soulreaperb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		zildar.addMouseListener(new MouseAdapter() {
+		spiderking.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						UnderworldDeckCardChoosingFrame.class
-								.getResource("/images/earth/zildarb.jpg")));
+								.getResource("/images/underworld/spiderkingb.jpg")));
 				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		steelofhell.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/steelofhellb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		suiciderskull.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/suiciderskullb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		surrogates.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/surrogatesb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		thefirstofpagans.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/thefirstofpagansb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		throneofdarkness.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/throneofdarknessb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		unknown.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/unknownb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		upsidedown.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/upsidedownb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		voodoo.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/voodoob.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		zitoki.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/zitokib.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		zombieinvasion.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/zombieinvasionb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+
+		
+		absenthia.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/absenthia.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				absenthia.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		
+		ancientdemonic.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/ancientdemonic.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				ancientdemonic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		angelofdeath.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/angelofdeath.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				angelofdeath.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		armorofthedarksoul.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/armorofthedarksoul.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				armorofthedarksoul.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		arpetios.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/arpetios.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				arpetios.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		badhabit.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/badhabit.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				badhabit.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		badluck.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/badluck.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				badluck.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		bladeofdarklord.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/bladeofdarklord.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bladeofdarklord.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		bloodcholic.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/bloodcholic.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				bloodcholic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		boatmanofdarkness.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/boatmanofdarkness.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				boatmanofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		callfromdarkness.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/callfromdarkness.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				callfromdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		cunningman.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/cunningman.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				cunningman.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		darkmagic.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/darkmagic.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				darkmagic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		darkreflection.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/darkreflection.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				darkreflection.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		demonic.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/demonic.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				demonic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		devilsadvocat.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/devilsadvocat.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				devilsadvocat.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		fatalbonds.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/fatalbonds.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				fatalbonds.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		fear.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/fear.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				fear.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		gorillaofhell.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/gorillaofhell.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				gorillaofhell.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hellhounds.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/hellhounds.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hellhounds.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpbonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/hpbonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		hpbonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/hpbonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpbonus3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/hpbonus3.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus3.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpbonus4.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/hpbonus4.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus4.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		illusion.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/illusion.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				illusion.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		kahkasso.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/kahkasso.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				kahkasso.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		khaduun.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/khaduun.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				khaduun.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+
+		khultzar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/khultzar.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				khultzar.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		lordfear.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/lordfear.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				lordfear.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manabonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/manabonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manabonus.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manabonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/manabonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manabonus2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		manaregeneration.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/manaregeneration.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manaregeneration.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manaregeneration2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/manaregeneration2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manaregeneration2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+
+		manaregeneration3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/manaregeneration3.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manaregeneration3.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		normorepain.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/normorepain.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				normorepain.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		pickpocket.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/pickpocket.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				pickpocket.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		poisonofdarkness.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/poisonofdarkness.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				poisonofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		psychkick.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/psychkick.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				psychkick.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		purgatory.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/purgatory.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				purgatory.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		quatsiah.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/quatsiah.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				quatsiah.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		rasputin.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/rasputin.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				rasputin.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		sacredritual.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/sacredritual.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				sacredritual.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		servantofdarklord.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/servantofdarklord.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				servantofdarklord.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		shieldofdarkness.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/shieldofdarkness.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				shieldofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		shiku.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/shiku.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				shiku.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		snakehead.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/snakehead.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				snakehead.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		soulreaper.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/soulreaper.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				soulreaper.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		spiderking.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/spiderking.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				spiderking.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		steelofhell.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/steelofhell.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				steelofhell.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		suiciderskull.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/suiciderskull.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				suiciderskull.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		surrogates.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/surrogates.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				surrogates.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		thefirstofpagans.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/thefirstofpagans.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				thefirstofpagans.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		throneofdarkness.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/throneofdarkness.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				throneofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		unknown.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/unknown.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				unknown.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		upsidedown.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/upsidedown.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				upsidedown.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		voodoo.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/voodoo.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				voodoo.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		zitoki.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/zitoki.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				zitoki.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		zombieinvasion.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						UnderworldDeckCardChoosingFrame.class
+								.getResource("/images/underworld/zombieinvasion.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				zombieinvasion.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
 
 			}
 		});
 
 	}
-}
-
-class ImagePanel extends JPanel {
-
-	private Image img;
-
-	public ImagePanel(ImageIcon imageIcon) {
-		this(new ImageIcon().getImage());
-	}
-
-	public ImagePanel(Image img) {
-		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-		setPreferredSize(size);
-		setMinimumSize(size);
-		setMaximumSize(size);
-		setSize(size);
-		setLayout(null);
-	}
-
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
-
 }
