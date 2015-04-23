@@ -1,11 +1,9 @@
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +29,8 @@ public class FireDeckCardChoosingFrame {
 	static final JButton panel3arrowLeft = new JButton();
 	static final JButton playButton = new JButton();
 
+	private static int key = 0;
+	private static final JButton[] selectedCards = new JButton[12];
 	private static final JButton selectedCard1 = new JButton();
 	private static final JButton selectedCard2 = new JButton();
 	private static final JButton selectedCard3 = new JButton();
@@ -127,55 +127,83 @@ public class FireDeckCardChoosingFrame {
 		gameWindowPanel.add(selectedCardPanel);
 		selectedCardPanel.setLayout(null);
 		selectedCardPanel.setBackground(new Color(0, 0, 0, 0));
+		
+		selectedCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard1.setBounds(75, 11, 80, 111);
-
+		
 		selectedCardPanel.add(selectedCard1);
+		selectedCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard2.setBounds(122, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard2);
+		selectedCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard3.setBounds(165, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard3);
+		selectedCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard4.setBounds(212, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard4);
+		selectedCard5.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard5.setBounds(255, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard5);
+		selectedCard6.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard6.setBounds(302, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard6);
+		selectedCard7.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard7.setBounds(345, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard7);
+		selectedCard8.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard8.setBounds(392, 11, 80, 111);
 
+		
+		selectedCards[0] = selectedCard1;
+		selectedCards[1] = selectedCard2;
+		selectedCards[2] = selectedCard3;
+		selectedCards[3] = selectedCard4;
+		selectedCards[4] = selectedCard5;
+		selectedCards[5] = selectedCard6;
+		selectedCards[6] = selectedCard7;
+		selectedCards[7] = selectedCard8;
+		selectedCards[8] = replacementCard1;
+		selectedCards[9] = replacementCard2;
+		selectedCards[10] = replacementCard3;
+		selectedCards[11] = replacementCard4;
+						
 		selectedCardPanel.add(selectedCard8);
+		
+		replacementCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard1.setBounds(75, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard1);
+		
+		replacementCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard2.setBounds(122, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard2);
+		
+		replacementCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard3.setBounds(165, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard3);
+		
+		replacementCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard4.setBounds(212, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard4);
-
-		selectedCard1.setVisible(false);
-		selectedCard2.setVisible(false);
-		selectedCard3.setVisible(false);
-		selectedCard4.setVisible(false);
-		selectedCard5.setVisible(false);
-		selectedCard6.setVisible(false);
-		selectedCard7.setVisible(false);
-		selectedCard8.setVisible(false);
-		replacementCard1.setVisible(false);
-		replacementCard2.setVisible(false);
-		replacementCard3.setVisible(false);
-		replacementCard4.setVisible(false);
+		
+		
+		selectedCard1.setVisible(true);
+		selectedCard2.setVisible(true);
+		selectedCard3.setVisible(true);
+		selectedCard4.setVisible(true);
+		selectedCard5.setVisible(true);
+		selectedCard6.setVisible(true);
+		selectedCard7.setVisible(true);
+		selectedCard8.setVisible(true);
+		replacementCard1.setVisible(true);
+		replacementCard2.setVisible(true);
+		replacementCard3.setVisible(true);
+		replacementCard4.setVisible(true);
 
 		chatPanel.setBounds(619, 442, 376, 229);
 		gameWindowPanel.add(chatPanel);
@@ -192,47 +220,44 @@ public class FireDeckCardChoosingFrame {
 		cardRepresentationPanel2.setBounds(0, 0, 624, 440);
 		gameWindowPanel.add(cardRepresentationPanel2);
 		cardRepresentationPanel2.setVisible(false);
-
+	
 		cardRepresentationPanel3.setLayout(null);
 		cardRepresentationPanel3.setBackground(new Color(0, 0, 0, 0));
 		cardRepresentationPanel3.setBounds(0, 0, 624, 440);
 		gameWindowPanel.add(cardRepresentationPanel3);
-		cardRepresentationPanel3.setVisible(false);
+		cardRepresentationPanel3.setVisible(false);		
 
-		playButton.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+		playButton.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/playButton.png")));
 		playButton.setBounds(514, 178, 100, 40);
 		selectedCardPanel.add(playButton);
-
-		panel1arrowRight.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+		
+		panel1arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel1arrowRight.setBounds(481, 393, 46, 48);
 		panel1arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel1.add(panel1arrowRight);
-
-		panel2arrowLeft.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+		
+		panel2arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel2arrowLeft.setBounds(71, 393, 46, 48);
 		panel2arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowLeft);
-
-		panel2arrowRight.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+		
+		panel2arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel2arrowRight.setBounds(481, 393, 46, 48);
 		panel2arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowRight);
-
-		panel3arrowLeft.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+		
+		
+		panel3arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel3arrowLeft.setBounds(71, 393, 46, 48);
 		panel3arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 
 		cardRepresentationPanel3.add(panel3arrowLeft);
 
-		
-		
-		
-		
 		angelofvutrag.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 				.getResource("/images/fire/angelofvutrag.jpg")));
 		angelofvutrag.setBounds(20, 11, 80, 111);
@@ -893,29 +918,560 @@ public class FireDeckCardChoosingFrame {
 
 			}
 		});
+
+		angelofvutrag.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/angelofvutrag.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				angelofvutrag.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		burningaemadillo.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/burningaemadillo.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				burningaemadillo.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		criticaldamage.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/criticaldamage.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				criticaldamage.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		danceoffire.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/danceoffire.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				danceoffire.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		deerthemightest.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/deerthemightest.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				deerthemightest.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		dragonofflames.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/dragonofflames.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				dragonofflames.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		elderreptile.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/elderreptile.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				elderreptile.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+				;
+
+			}
+		});
+		explosion.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/explosion.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				explosion.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		firearmor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/firearmor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				firearmor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		firegolem.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/firegolem.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				firegolem.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		firewall.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/firewall.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				firewall.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		firewolf.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/firewolf.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				firewolf.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		flamefusion.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/flamefusion.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				flamefusion.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		flameguard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/flameguard.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				flameguard.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		flamethrower.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/flamethrower.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				flamethrower.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		frodo.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/frodo.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				frodo.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		furcius.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/furcius.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				furcius.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		ginger.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/ginger.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				ginger.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hot.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/hot.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hot.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		hpbonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/hpbonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		hpbonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/hpbonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus2.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpbonus3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/hpbonus3.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus3.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hyusha.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/hyusha.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hyusha.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		iseeyou.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/iseeyou.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				iseeyou.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		kingofthumbor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/kingofthumbor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				kingofthumbor.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		kingofwrath.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/kingofwrath.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				kingofwrath.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		knightofthumbor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/knightofthumbor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				knightofthumbor.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+
+		kockhar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/kockhar.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				kockhar.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		lava.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/lava.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				lava.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		litmua.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/litmua.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				litmua.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		lordofflames.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/lordofflames.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				lordofflames.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		manabonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/manabonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manabonus.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manabonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/manabonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manabonus2.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+
+		meanor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/meanor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				meanor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		nomercy.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/nomercy.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				nomercy.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		patrux.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/patrux.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				patrux.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		presence.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/presence.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				presence.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		realburst.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/realburst.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				realburst.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		sengard.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/sengard.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				sengard.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		sheila.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/sheila.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				sheila.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		shieldinflames.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/shieldinflames.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				shieldinflames.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		sindor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/sindor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				sindor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		skyscream.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/skyscream.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				skyscream.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		thisgirlisonfire.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/thisgirlisonfire.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				thisgirlisonfire.setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/backofdeck.png")));
+			}
+		});
+		ticano.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/ticano.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				ticano.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		turcox.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/turcox.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				turcox.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		welder.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						FireDeckCardChoosingFrame.class
+								.getResource("/images/fire/welder.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				welder.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
 	}
-}
-
-class ImagePanel extends JPanel {
-
-	private Image img;
-
-	public ImagePanel(ImageIcon imageIcon) {
-		this(new ImageIcon().getImage());
-	}
-
-	public ImagePanel(Image img) {
-		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-		setPreferredSize(size);
-		setMinimumSize(size);
-		setMaximumSize(size);
-		setSize(size);
-		setLayout(null);
-	}
-
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
-
 }
