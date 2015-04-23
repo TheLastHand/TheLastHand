@@ -221,27 +221,7 @@ public class ActionAppointment {
 						}
 					}
 				});
-		EarthDeckCardChoosingFrame.backButton.setActionCommand("backButton");
-		EarthDeckCardChoosingFrame.backButton
-				.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String command = e.getActionCommand();
-
-						if (command.equals("backButton")) {
-
-							try {
-								DeckChoosingFrame.deckChoosingFrame();
-								DeckChoosingFrame.deckChoosingFrame.repaint();
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
-							EarthDeckCardChoosingFrame.cardChoosingFrame
-									.dispose();
-
-						}
-					}
-				});
+		
 
 		FireDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("panel1arrowRight");
@@ -328,27 +308,7 @@ public class ActionAppointment {
 					}
 				});
 
-		FireDeckCardChoosingFrame.backButton.setActionCommand("backButton");
-		FireDeckCardChoosingFrame.backButton
-				.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String command = e.getActionCommand();
-
-						if (command.equals("backButton")) {
-
-							try {
-								DeckChoosingFrame.deckChoosingFrame();
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
-							FireDeckCardChoosingFrame.cardChoosingFrame
-									.dispose();
-
-						}
-					}
-				});
-
+	
 		GlacierDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
 		GlacierDeckCardChoosingFrame.panel1arrowRight
@@ -433,26 +393,7 @@ public class ActionAppointment {
 						}
 					}
 				});
-		GlacierDeckCardChoosingFrame.backButton.setActionCommand("backButton");
-		GlacierDeckCardChoosingFrame.backButton
-				.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String command = e.getActionCommand();
-
-						if (command.equals("backButton")) {
-
-							try {
-								DeckChoosingFrame.deckChoosingFrame();
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
-							GlacierDeckCardChoosingFrame.cardChoosingFrame
-									.dispose();
-
-						}
-					}
-				});
+	
 
 		NatureDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
@@ -538,26 +479,7 @@ public class ActionAppointment {
 						}
 					}
 				});
-		NatureDeckCardChoosingFrame.backButton.setActionCommand("backButton");
-		NatureDeckCardChoosingFrame.backButton
-				.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String command = e.getActionCommand();
-
-						if (command.equals("backButton")) {
-
-							try {
-								DeckChoosingFrame.deckChoosingFrame();
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
-							NatureDeckCardChoosingFrame.cardChoosingFrame
-									.dispose();
-
-						}
-					}
-				});
+	
 
 		WaterDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
@@ -675,26 +597,7 @@ public class ActionAppointment {
 						}
 					}
 				});
-		WaterDeckCardChoosingFrame.backButton.setActionCommand("backButton");
-		WaterDeckCardChoosingFrame.backButton
-				.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String command = e.getActionCommand();
-
-						if (command.equals("backButton")) {
-
-							try {
-								DeckChoosingFrame.deckChoosingFrame();
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
-							WaterDeckCardChoosingFrame.cardChoosingFrame
-									.dispose();
-
-						}
-					}
-				});
+		
 
 		UnderworldDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
@@ -813,27 +716,7 @@ public class ActionAppointment {
 						}
 					}
 				});
-		UnderworldDeckCardChoosingFrame.backButton
-				.setActionCommand("backButton");
-		UnderworldDeckCardChoosingFrame.backButton
-				.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						String command = e.getActionCommand();
-
-						if (command.equals("backButton")) {
-
-							try {
-								DeckChoosingFrame.deckChoosingFrame();
-							} catch (IOException e1) {
-								// TODO Auto-generated catch block
-								e1.printStackTrace();
-							}
-							UnderworldDeckCardChoosingFrame.cardChoosingFrame
-									.dispose();
-
-						}
-					}
-				});
+		
 
 		MainMenuFrame.exitButton.addActionListener(new ActionListener() {
 
