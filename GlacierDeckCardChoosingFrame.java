@@ -1,11 +1,9 @@
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Insets;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +29,8 @@ public class GlacierDeckCardChoosingFrame {
 	static final JButton panel3arrowLeft = new JButton();
 	static final JButton playButton = new JButton();
 
+	private static int key = 0;
+	private static final JButton[] selectedCards = new JButton[12];
 	private static final JButton selectedCard1 = new JButton();
 	private static final JButton selectedCard2 = new JButton();
 	private static final JButton selectedCard3 = new JButton();
@@ -45,54 +45,55 @@ public class GlacierDeckCardChoosingFrame {
 	private static final JButton replacementCard4 = new JButton();
 	private static final JButton biggerVersionButton = new JButton();
 
-	private static final JButton adam = new JButton();
-	private static final JButton ancientracoon = new JButton();
-	private static final JButton atmosphere = new JButton();
-	private static final JButton buriedarmy = new JButton();
-	private static final JButton champ = new JButton();
-	private static final JButton dolza = new JButton();
-	private static final JButton earthhole = new JButton();
-	private static final JButton earthquake = new JButton();
-	private static final JButton eclipse = new JButton();
-	private static final JButton elderdynosaur = new JButton();
-	private static final JButton embedded = new JButton();
-	private static final JButton fatlord = new JButton();
-	private static final JButton formofmud = new JButton();
-	private static final JButton fornax = new JButton();
-	private static final JButton gortag = new JButton();
-	private static final JButton greatabsorbation = new JButton();
-	private static final JButton groundshaker = new JButton();
-	private static final JButton gruntag = new JButton();
-	private static final JButton guardianofgolems = new JButton();
+	private static final JButton avalanche = new JButton();
+	private static final JButton betrux = new JButton();
+	private static final JButton cubic = new JButton();
+	private static final JButton dancerontheice = new JButton();
+	private static final JButton dragonofthenorth = new JButton();
+	private static final JButton dulgor = new JButton();
+	private static final JButton fhilta = new JButton();
+	private static final JButton fireoffrost = new JButton();
+	private static final JButton freezingeye = new JButton();
+	private static final JButton frozenarmor = new JButton();
+	private static final JButton frozendragon = new JButton();
+	private static final JButton frozenreaction = new JButton();
+	private static final JButton fursang = new JButton();
+	private static final JButton girloficeland = new JButton();
+	private static final JButton glacialhero = new JButton();
+	private static final JButton gurasso = new JButton();
 	private static final JButton hpbonus = new JButton();
 	private static final JButton hpbonus2 = new JButton();
 	private static final JButton hpbonus3 = new JButton();
-	private static final JButton hpbonus4 = new JButton();
-	private static final JButton hpbonus5 = new JButton();
-	private static final JButton kraken = new JButton();
-	private static final JButton lieutenantturtle = new JButton();
-	private static final JButton lycanranger = new JButton();
+	private static final JButton hurrostic = new JButton();
+	private static final JButton iceflection = new JButton();
+	private static final JButton icegolem = new JButton();
+	private static final JButton icehole = new JButton();
+	private static final JButton iceicebaby = new JButton();
+	private static final JButton icerain = new JButton();
+	private static final JButton iceshards = new JButton();
+	private static final JButton icewolf = new JButton();
+	private static final JButton iturbe = new JButton();
+	private static final JButton letso = new JButton();
 	private static final JButton manabonus = new JButton();
-	private static final JButton manofdust = new JButton();
-	private static final JButton meteora = new JButton();
-	private static final JButton nuxia = new JButton();
-	private static final JButton reflection = new JButton();
-	private static final JButton reflection2 = new JButton();
-	private static final JButton rhachor = new JButton();
-	private static final JButton robotsoldier = new JButton();
-	private static final JButton rocky = new JButton();
-	private static final JButton rorox = new JButton();
-	private static final JButton rustybull = new JButton();
-	private static final JButton shaker = new JButton();
-	private static final JButton shieldofbereth = new JButton();
-	private static final JButton skorka = new JButton();
-	private static final JButton sorktangthesleepy = new JButton();
-	private static final JButton splitter = new JButton();
-	private static final JButton stuckinthesand = new JButton();
-	private static final JButton thegreatmammoth = new JButton();
-	private static final JButton trochkar = new JButton();
-	private static final JButton untouchable = new JButton();
-	private static final JButton zildar = new JButton();
+	private static final JButton manabonus2 = new JButton();
+	private static final JButton monzy = new JButton();
+	private static final JButton nomadziya = new JButton();
+	private static final JButton rageofmamuts = new JButton();
+	private static final JButton sacredcrystal = new JButton();
+	private static final JButton santaspirit = new JButton();
+	private static final JButton santasvisit = new JButton();
+	private static final JButton shieldofice = new JButton();
+	private static final JButton sitorius = new JButton();
+	private static final JButton storghar = new JButton();
+	private static final JButton therealemperor = new JButton();
+	private static final JButton thiefoficeland = new JButton();
+	private static final JButton uthulga = new JButton();
+	private static final JButton voziac = new JButton();
+	private static final JButton wolvex = new JButton();
+	private static final JButton xalyaandforish = new JButton();
+	private static final JButton zecse = new JButton();
+	private static final JButton zithar = new JButton();
+	
 
 	/**
 	 * @wbp.parser.entryPoint
@@ -100,7 +101,7 @@ public class GlacierDeckCardChoosingFrame {
 	public static void CardChoosingFrame() throws IOException {
 		ImagePanel gameWindowPanel = new ImagePanel(
 				new ImageIcon(GlacierDeckCardChoosingFrame.class
-						.getResource("/images/earthdeckbackground.jpg"))
+						.getResource("/images/glacierdeckbackground.jpg"))
 						.getImage());
 
 		cardChoosingFrame.setSize(1000, 720);
@@ -128,55 +129,83 @@ public class GlacierDeckCardChoosingFrame {
 		gameWindowPanel.add(selectedCardPanel);
 		selectedCardPanel.setLayout(null);
 		selectedCardPanel.setBackground(new Color(0, 0, 0, 0));
+		
+		selectedCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard1.setBounds(75, 11, 80, 111);
-
+		
 		selectedCardPanel.add(selectedCard1);
+		selectedCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard2.setBounds(122, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard2);
+		selectedCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard3.setBounds(165, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard3);
+		selectedCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard4.setBounds(212, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard4);
+		selectedCard5.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard5.setBounds(255, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard5);
+		selectedCard6.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard6.setBounds(302, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard6);
+		selectedCard7.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard7.setBounds(345, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard7);
+		selectedCard8.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		selectedCard8.setBounds(392, 11, 80, 111);
 
+		
+		selectedCards[0] = selectedCard1;
+		selectedCards[1] = selectedCard2;
+		selectedCards[2] = selectedCard3;
+		selectedCards[3] = selectedCard4;
+		selectedCards[4] = selectedCard5;
+		selectedCards[5] = selectedCard6;
+		selectedCards[6] = selectedCard7;
+		selectedCards[7] = selectedCard8;
+		selectedCards[8] = replacementCard1;
+		selectedCards[9] = replacementCard2;
+		selectedCards[10] = replacementCard3;
+		selectedCards[11] = replacementCard4;
+						
 		selectedCardPanel.add(selectedCard8);
+		
+		replacementCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard1.setBounds(75, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard1);
+		
+		replacementCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard2.setBounds(122, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard2);
+		
+		replacementCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard3.setBounds(165, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard3);
+		
+		replacementCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
 		replacementCard4.setBounds(212, 129, 80, 111);
-
 		selectedCardPanel.add(replacementCard4);
-
-		selectedCard1.setVisible(false);
-		selectedCard2.setVisible(false);
-		selectedCard3.setVisible(false);
-		selectedCard4.setVisible(false);
-		selectedCard5.setVisible(false);
-		selectedCard6.setVisible(false);
-		selectedCard7.setVisible(false);
-		selectedCard8.setVisible(false);
-		replacementCard1.setVisible(false);
-		replacementCard2.setVisible(false);
-		replacementCard3.setVisible(false);
-		replacementCard4.setVisible(false);
+		
+		
+		selectedCard1.setVisible(true);
+		selectedCard2.setVisible(true);
+		selectedCard3.setVisible(true);
+		selectedCard4.setVisible(true);
+		selectedCard5.setVisible(true);
+		selectedCard6.setVisible(true);
+		selectedCard7.setVisible(true);
+		selectedCard8.setVisible(true);
+		replacementCard1.setVisible(true);
+		replacementCard2.setVisible(true);
+		replacementCard3.setVisible(true);
+		replacementCard4.setVisible(true);
 
 		chatPanel.setBounds(619, 442, 376, 229);
 		gameWindowPanel.add(chatPanel);
@@ -200,446 +229,414 @@ public class GlacierDeckCardChoosingFrame {
 		gameWindowPanel.add(cardRepresentationPanel3);
 		cardRepresentationPanel3.setVisible(false);		
 
-		playButton.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+		playButton.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/playButton.png")));
 		playButton.setBounds(514, 178, 100, 40);
 		selectedCardPanel.add(playButton);
 		
-		panel1arrowRight.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+		panel1arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel1arrowRight.setBounds(481, 393, 46, 48);
 		panel1arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel1.add(panel1arrowRight);
 		
-		panel2arrowLeft.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+		panel2arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel2arrowLeft.setBounds(71, 393, 46, 48);
 		panel2arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowLeft);
 		
-		panel2arrowRight.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+		panel2arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel2arrowRight.setBounds(481, 393, 46, 48);
 		panel2arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowRight);
 		
 		
-		panel3arrowLeft.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+		panel3arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel3arrowLeft.setBounds(71, 393, 46, 48);
 		panel3arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 
 		cardRepresentationPanel3.add(panel3arrowLeft);
-		
-		
-		adam.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/adam.jpg")));
-		adam.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel1.add(adam);
-		
-		ancientracoon.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/ancientracoon.jpg")));
-		ancientracoon.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel1.add(ancientracoon);
-		
-		atmosphere.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/atmosphere.jpg")));
-		atmosphere.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel1.add(atmosphere);
-		
-		buriedarmy.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/buriedarmy.jpg")));
-		buriedarmy.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel1.add(buriedarmy);
-		
-		champ.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/champ.jpg")));
-		champ.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel1.add(champ);
-		
-		dolza.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/dolza.jpg")));
-		dolza.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel1.add(dolza);
-		
-		earthhole.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthhole.jpg")));
-		earthhole.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel1.add(earthhole);
-		
-		earthquake.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/earthquake.jpg")));
-		earthquake.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel1.add(earthquake);
 
-		eclipse.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/eclipse.jpg")));
-		eclipse.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel1.add(eclipse);
+		avalanche.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/avalanche.jpg")));
+		avalanche.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel1.add(avalanche);
 
-		elderdynosaur.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/elderdynosaur.jpg")));
-		elderdynosaur.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel1.add(elderdynosaur);
+		betrux.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/betrux.jpg")));
+		betrux.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel1.add(betrux);
 
-		embedded.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/embedded.jpg")));
-		embedded.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel1.add(embedded);
+		cubic.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/cubic.jpg")));
+		cubic.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel1.add(cubic);
 
-		fatlord.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/fatlord.jpg")));
-		fatlord.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel1.add(fatlord);
+		dancerontheice.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/dancerontheice.jpg")));
+		dancerontheice.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel1.add(dancerontheice);
 
-		formofmud.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/formofmud.jpg")));
-		formofmud.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel1.add(formofmud);
+		dragonofthenorth.setIcon(new ImageIcon(
+				GlacierDeckCardChoosingFrame.class
+						.getResource("/images/glacier/dragonofthenorth.jpg")));
+		dragonofthenorth.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel1.add(dragonofthenorth);
 
-		fornax.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/fornax.jpg")));
-		fornax.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel1.add(fornax);
+		dulgor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/dulgor.jpg")));
+		dulgor.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel1.add(dulgor);
 
-		gortag.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/gortag.jpg")));
-		gortag.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel1.add(gortag);
+		fhilta.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/fhilta.jpg")));
+		fhilta.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel1.add(fhilta);
 
-		greatabsorbation.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/greatabsorbation.jpg")));
-		greatabsorbation.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel1.add(greatabsorbation);
+		fireoffrost.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/fireoffrost.jpg")));
+		fireoffrost.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel1.add(fireoffrost);
 
-		groundshaker.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/groundshaker.jpg")));
-		groundshaker.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel1.add(groundshaker);
+		freezingeye.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/freezingeye.jpg")));
+		freezingeye.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel1.add(freezingeye);
 
-		gruntag.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/gruntag.jpg")));
-		gruntag.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel1.add(gruntag);
+		frozenarmor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/frozenarmor.jpg")));
+		frozenarmor.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel1.add(frozenarmor);
 
-		guardianofgolems.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/guardianofgolems.jpg")));
-		guardianofgolems.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel2.add(guardianofgolems);
+		frozendragon.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/frozendragon.jpg")));
+		frozendragon.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel1.add(frozendragon);
+
+		frozenreaction.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/frozenreaction.jpg")));
+		frozenreaction.setBounds(522, 138, 80, 111);
+		cardRepresentationPanel1.add(frozenreaction);
+
+		fursang.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/fursang.jpg")));
+		fursang.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel1.add(fursang);
+
+		girloficeland.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/girloficeland.jpg")));
+		girloficeland.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel1.add(girloficeland);
+
+		glacialhero.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/glacialhero.jpg")));
+		glacialhero.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel1.add(glacialhero);
+
+		gurasso.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/gurasso.jpg")));
+		gurasso.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel1.add(gurasso);
 
 		hpbonus.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus.jpg")));
-		hpbonus.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus);
+				.getResource("/images/glacier/hpbonus.jpg")));
+		hpbonus.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel1.add(hpbonus);
 
 		hpbonus2.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus2.jpg")));
-		hpbonus2.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus2);
+				.getResource("/images/glacier/hpbonus2.jpg")));
+		hpbonus2.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel1.add(hpbonus2);
 
 		hpbonus3.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus3.jpg")));
-		hpbonus3.setBounds(324, 11, 80, 111);
+				.getResource("/images/glacier/hpbonus3.jpg")));
+		hpbonus3.setBounds(20, 11, 80, 111);
 		cardRepresentationPanel2.add(hpbonus3);
 
-		hpbonus4.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus4.jpg")));
-		hpbonus4.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus4);
+		hurrostic.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/hurrostic.jpg")));
+		hurrostic.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel2.add(hurrostic);
 
-		hpbonus5.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/hpbonus5.jpg")));
-		hpbonus5.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel2.add(hpbonus5);
-		
-		kraken.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/kraken.jpg")));
-		kraken.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel2.add(kraken);
+		iceflection.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/iceflection.jpg")));
+		iceflection.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel2.add(iceflection);
 
-		lieutenantturtle.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/lieutenantturtle.jpg")));
-		lieutenantturtle.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel2.add(lieutenantturtle);
+		icegolem.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/icegolem.jpg")));
+		icegolem.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel2.add(icegolem);
 
-		lycanranger.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/lycanranger.jpg")));
-		lycanranger.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel2.add(lycanranger);
+		icehole.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/icehole.jpg")));
+		icehole.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel2.add(icehole);
+
+		iceicebaby.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/iceicebaby.jpg")));
+		iceicebaby.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel2.add(iceicebaby);
+
+		icerain.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/icerain.jpg")));
+		icerain.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel2.add(icerain);
+
+		iceshards.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/iceshards.jpg")));
+		iceshards.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel2.add(iceshards);
+
+		icewolf.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/icewolf.jpg")));
+		icewolf.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel2.add(icewolf);
+
+		iturbe.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/iturbe.jpg")));
+		iturbe.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel2.add(iturbe);
+
+		letso.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/letso.jpg")));
+		letso.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel2.add(letso);
 
 		manabonus.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/manabonus.jpg")));
-		manabonus.setBounds(324, 138, 80, 111);
+				.getResource("/images/glacier/manabonus.jpg")));
+		manabonus.setBounds(522, 138, 80, 111);
 		cardRepresentationPanel2.add(manabonus);
 
-		manofdust.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/manofdust.jpg")));
-		manofdust.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel2.add(manofdust);
+		manabonus2.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/manabonus2.jpg")));
+		manabonus2.setBounds(20, 264, 80, 111);
+		cardRepresentationPanel2.add(manabonus2);
 
-		meteora.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/meteora.jpg")));
-		meteora.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel2.add(meteora);
+		monzy.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/monzy.jpg")));
+		monzy.setBounds(120, 264, 80, 111);
+		cardRepresentationPanel2.add(monzy);
 
-		nuxia.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/nuxia.jpg")));
-		nuxia.setBounds(20, 264, 80, 111);
-		cardRepresentationPanel2.add(nuxia);
+		nomadziya.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/nomadziya.jpg")));
+		nomadziya.setBounds(221, 264, 80, 111);
+		cardRepresentationPanel2.add(nomadziya);
 
-		reflection.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection.jpg")));
-		reflection.setBounds(120, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection);
+		rageofmamuts.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/rageofmamuts.jpg")));
+		rageofmamuts.setBounds(324, 264, 80, 111);
+		cardRepresentationPanel2.add(rageofmamuts);
 
-		reflection2.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/reflection2.jpg")));
-		reflection2.setBounds(221, 264, 80, 111);
-		cardRepresentationPanel2.add(reflection2);
+		sacredcrystal.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/sacredcrystal.jpg")));
+		sacredcrystal.setBounds(422, 264, 80, 111);
+		cardRepresentationPanel2.add(sacredcrystal);
 
-		rhachor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/rhachor.jpg")));
-		rhachor.setBounds(324, 264, 80, 111);
-		cardRepresentationPanel2.add(rhachor);
+		santaspirit.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/santaspirit.jpg")));
+		santaspirit.setBounds(522, 264, 80, 111);
+		cardRepresentationPanel2.add(santaspirit);
 
-		robotsoldier.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/robotsoldier.jpg")));
-		robotsoldier.setBounds(422, 264, 80, 111);
-		cardRepresentationPanel2.add(robotsoldier);
+		santasvisit.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/santasvisit.jpg")));
+		santasvisit.setBounds(20, 11, 80, 111);
+		cardRepresentationPanel3.add(santasvisit);
 
-		rocky.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/rocky.jpg")));
-		rocky.setBounds(522, 264, 80, 111);
-		cardRepresentationPanel2.add(rocky);
+		shieldofice.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/shieldofice.jpg")));
+		shieldofice.setBounds(120, 11, 80, 111);
+		cardRepresentationPanel3.add(shieldofice);
 
-		rorox.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/rorox.jpg")));
-		rorox.setBounds(20, 11, 80, 111);
-		cardRepresentationPanel3.add(rorox);
+		sitorius.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/sitorius.jpg")));
+		sitorius.setBounds(221, 11, 80, 111);
+		cardRepresentationPanel3.add(sitorius);
 
-		rustybull.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/rustybull.jpg")));
-		rustybull.setBounds(120, 11, 80, 111);
-		cardRepresentationPanel3.add(rustybull);
+		storghar.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/storghar.jpg")));
+		storghar.setBounds(324, 11, 80, 111);
+		cardRepresentationPanel3.add(storghar);
 
-		shaker.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/shaker.jpg")));
-		shaker.setBounds(221, 11, 80, 111);
-		cardRepresentationPanel3.add(shaker);
+		therealemperor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/therealemperor.jpg")));
+		therealemperor.setBounds(422, 11, 80, 111);
+		cardRepresentationPanel3.add(therealemperor);
 
-		shieldofbereth.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/shieldofbereth.jpg")));
-		shieldofbereth.setBounds(324, 11, 80, 111);
-		cardRepresentationPanel3.add(shieldofbereth);
+		thiefoficeland.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/thiefoficeland.jpg")));
+		thiefoficeland.setBounds(522, 11, 80, 111);
+		cardRepresentationPanel3.add(thiefoficeland);
 
-		skorka.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/skorka.jpg")));
-		skorka.setBounds(422, 11, 80, 111);
-		cardRepresentationPanel3.add(skorka);
+		uthulga.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/uthulga.jpg")));
+		uthulga.setBounds(20, 138, 80, 111);
+		cardRepresentationPanel3.add(uthulga);
 
-		sorktangthesleepy.setIcon(new ImageIcon(
-				GlacierDeckCardChoosingFrame.class
-						.getResource("/images/earth/sorktangthesleepy.jpg")));
-		sorktangthesleepy.setBounds(522, 11, 80, 111);
-		cardRepresentationPanel3.add(sorktangthesleepy);
+		voziac.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class.getResource("/images/glacier/voziac.jpg")));
+		voziac.setBounds(120, 138, 80, 111);
+		cardRepresentationPanel3.add(voziac);
 
-		splitter.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/splitter.jpg")));
-		splitter.setBounds(20, 138, 80, 111);
-		cardRepresentationPanel3.add(splitter);
+		wolvex.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/wolvex.jpg")));
+		wolvex.setBounds(221, 138, 80, 111);
+		cardRepresentationPanel3.add(wolvex);
 
-		stuckinthesand.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/stuckinthesand.jpg")));
-		stuckinthesand.setBounds(120, 138, 80, 111);
-		cardRepresentationPanel3.add(stuckinthesand);
+		xalyaandforish.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/xalyaandforish.jpg")));
+		xalyaandforish.setBounds(324, 138, 80, 111);
+		cardRepresentationPanel3.add(xalyaandforish);
 
-		thegreatmammoth.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/thegreatmammoth.jpg")));
-		thegreatmammoth.setBounds(221, 138, 80, 111);
-		cardRepresentationPanel3.add(thegreatmammoth);
+		zecse.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+				.getResource("/images/glacier/zecse.jpg")));
+		zecse.setBounds(422, 138, 80, 111);
+		cardRepresentationPanel3.add(zecse);
 
-		trochkar.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/trochkar.jpg")));
-		trochkar.setBounds(324, 138, 80, 111);
-		cardRepresentationPanel3.add(trochkar);
+		
 
-		untouchable.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/untouchable.jpg")));
-		untouchable.setBounds(422, 138, 80, 111);
-		cardRepresentationPanel3.add(untouchable);
-
-		zildar.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
-				.getResource("/images/earth/zildar.jpg")));
-		zildar.setBounds(522, 138, 80, 111);
-		cardRepresentationPanel3.add(zildar);
-
-		adam.addMouseListener(new MouseAdapter() {
+		avalanche.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/adamb.jpg")));
+								.getResource("/images/glacier/avalancheb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		ancientracoon.addMouseListener(new MouseAdapter() {
+		betrux.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/ancientracoonb.jpg")));
+								.getResource("/images/glacier/betruxb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		atmosphere.addMouseListener(new MouseAdapter() {
+		cubic.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/atmosphereb.jpg")));
+								.getResource("/images/glacier/cubicb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		buriedarmy.addMouseListener(new MouseAdapter() {
+		dancerontheice.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/buriedarmyb.jpg")));
+								.getResource("/images/glacier/dancerontheiceb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		champ.addMouseListener(new MouseAdapter() {
+		dragonofthenorth.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/champb.jpg")));
+								.getResource("/images/glacier/dragonofthenorthb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		dolza.addMouseListener(new MouseAdapter() {
+		dulgor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/dolzab.jpg")));
+								.getResource("/images/glacier/dulgorb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthhole.addMouseListener(new MouseAdapter() {
+		fhilta.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthholeb.jpg")));
+								.getResource("/images/glacier/fhiltab.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		earthquake.addMouseListener(new MouseAdapter() {
+		fireoffrost.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/earthquakeb.jpg")));
+								.getResource("/images/glacier/fireoffrostb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		eclipse.addMouseListener(new MouseAdapter() {
+		freezingeye.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/eclipseb.jpg")));
+								.getResource("/images/glacier/freezingeyeb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		elderdynosaur.addMouseListener(new MouseAdapter() {
+		frozenarmor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/elderdynosaurb.jpg")));
+								.getResource("/images/glacier/frozenarmorb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		embedded.addMouseListener(new MouseAdapter() {
+		frozendragon.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/embeddedb.jpg")));
+								.getResource("/images/glacier/frozendragonb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fatlord.addMouseListener(new MouseAdapter() {
+		frozenreaction.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/fatlordb.jpg")));
+								.getResource("/images/glacier/frozenreactionb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		formofmud.addMouseListener(new MouseAdapter() {
+		fursang.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/formofmudb.jpg")));
+								.getResource("/images/glacier/fursangb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		fornax.addMouseListener(new MouseAdapter() {
+		girloficeland.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/fornaxb.jpg")));
+								.getResource("/images/glacier/girloficelandb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		gortag.addMouseListener(new MouseAdapter() {
+		glacialhero.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/gortagb.jpg")));
+								.getResource("/images/glacier/glacialherob.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		greatabsorbation.addMouseListener(new MouseAdapter() {
+		gurasso.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/greatabsorbationb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		groundshaker.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/groundshakerb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		gruntag.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/gruntagb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		guardianofgolems.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/guardianofgolemsb.jpg")));
+								.getResource("/images/glacier/gurassob.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -648,7 +645,7 @@ public class GlacierDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonusb.jpg")));
+								.getResource("/images/glacier/hpbonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -657,7 +654,7 @@ public class GlacierDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus2b.jpg")));
+								.getResource("/images/glacier/hpbonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
@@ -666,271 +663,833 @@ public class GlacierDeckCardChoosingFrame {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus3b.jpg")));
+								.getResource("/images/glacier/hpbonus3b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		hpbonus4.addMouseListener(new MouseAdapter() {
+		hurrostic.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus4b.jpg")));
+								.getResource("/images/glacier/hurrosticb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		hpbonus5.addMouseListener(new MouseAdapter() {
+		iceflection.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/hpbonus5b.jpg")));
+								.getResource("/images/glacier/iceflectionb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		kraken.addMouseListener(new MouseAdapter() {
+		icegolem.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/krakenb.jpg")));
+								.getResource("/images/glacier/icegolemb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lieutenantturtle.addMouseListener(new MouseAdapter() {
+		icehole.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/lieutenantturtleb.jpg")));
+								.getResource("/images/glacier/iceholeb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		lycanranger.addMouseListener(new MouseAdapter() {
+		iceicebaby.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/lycanrangerb.jpg")));
+								.getResource("/images/glacier/iceicebabyb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		icerain.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/icerainb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		iceshards.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/iceshardsb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		icewolf.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/icewolfb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
 
+		iturbe.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/iturbeb.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		letso.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent mEvt) {
+				biggerVersionButton.setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/letsob.jpg")));
+				biggerVersionButton.setVisible(true);
+
+			}
+		});
 		manabonus.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/manabonusb.jpg")));
+								.getResource("/images/glacier/manabonusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		manofdust.addMouseListener(new MouseAdapter() {
+		manabonus2.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/manofdustb.jpg")));
+								.getResource("/images/glacier/manabonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		meteora.addMouseListener(new MouseAdapter() {
+		monzy.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/meteorab.jpg")));
+								.getResource("/images/glacier/monzyb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		nuxia.addMouseListener(new MouseAdapter() {
+		nomadziya.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/nuxiab.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		reflection.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflectionb.jpg")));
-				biggerVersionButton.setVisible(true);
-
-			}
-		});
-		reflection2.addMouseListener(new MouseAdapter() {
-			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton.setIcon(new ImageIcon(
-						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/reflection2b.jpg")));
+								.getResource("/images/glacier/nomadziyab.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
 
-		rhachor.addMouseListener(new MouseAdapter() {
+		rageofmamuts.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/rhachorb.jpg")));
+								.getResource("/images/glacier/rageofmamutsb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		robotsoldier.addMouseListener(new MouseAdapter() {
+		sacredcrystal.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/robotsoldierb.jpg")));
+								.getResource("/images/glacier/sacredcrystalb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rocky.addMouseListener(new MouseAdapter() {
+		santaspirit.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/rockyb.jpg")));
+								.getResource("/images/glacier/santaspiritb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rorox.addMouseListener(new MouseAdapter() {
+		santasvisit.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/roroxb.jpg")));
+								.getResource("/images/glacier/santasvisitb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		rustybull.addMouseListener(new MouseAdapter() {
+		shieldofice.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/rustybullb.jpg")));
+								.getResource("/images/glacier/shieldoficeb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shaker.addMouseListener(new MouseAdapter() {
+		sitorius.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/shakerb.jpg")));
+								.getResource("/images/glacier/sitoriusb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		shieldofbereth.addMouseListener(new MouseAdapter() {
+		storghar.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/shieldofberethb.jpg")));
+								.getResource("/images/glacier/storgharb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		skorka.addMouseListener(new MouseAdapter() {
+		therealemperor.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/skorkab.jpg")));
+								.getResource("/images/glacier/therealemperorb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		sorktangthesleepy.addMouseListener(new MouseAdapter() {
+		thiefoficeland.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/sorktangthesleepyb.jpg")));
+								.getResource("/images/glacier/thiefoficelandb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		splitter.addMouseListener(new MouseAdapter() {
+		uthulga.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/splitterb.jpg")));
+								.getResource("/images/glacier/uthulgab.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		stuckinthesand.addMouseListener(new MouseAdapter() {
+		voziac.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/stuckinthesandb.jpg")));
+								.getResource("/images/glacier/voziacb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		thegreatmammoth.addMouseListener(new MouseAdapter() {
+		wolvex.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/thegreatmammothb.jpg")));
+								.getResource("/images/glacier/wolvexb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		trochkar.addMouseListener(new MouseAdapter() {
+		xalyaandforish.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/trochkarb.jpg")));
+								.getResource("/images/glacier/xalyaandforishb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		untouchable.addMouseListener(new MouseAdapter() {
+		zecse.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/untouchableb.jpg")));
+								.getResource("/images/glacier/zecseb.jpg")));
 				biggerVersionButton.setVisible(true);
 
 			}
 		});
-		zildar.addMouseListener(new MouseAdapter() {
+		zithar.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
 				biggerVersionButton.setIcon(new ImageIcon(
 						GlacierDeckCardChoosingFrame.class
-								.getResource("/images/earth/zildarb.jpg")));
+								.getResource("/images/glacier/zitharb.jpg")));
 				biggerVersionButton.setVisible(true);
+
+			}
+		});
+		
+		avalanche.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/avalanche.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				avalanche.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		betrux.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/betrux.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				betrux.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		cubic.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/cubic.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				cubic.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		dancerontheice.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/dancerontheice.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				dancerontheice.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		dragonofthenorth.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/dragonofthenorth.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				dragonofthenorth.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		dulgor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/dulgor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				dulgor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		fhilta.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/fhilta.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				fhilta.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		fireoffrost.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/fireoffrost.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				fireoffrost.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		freezingeye.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/freezingeye.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				freezingeye.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		frozenarmor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/frozenarmor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				frozenarmor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		frozendragon.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/frozendragon.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				frozendragon.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		frozenreaction.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/frozenreaction.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				frozenreaction.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		fursang.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/fursang.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				fursang.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		girloficeland.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/girloficeland.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				girloficeland.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		glacialhero.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/glacialhero.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				glacialhero.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		gurasso.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/gurasso.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				gurasso.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		hpbonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/hpbonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		hpbonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/hpbonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus2.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hpbonus3.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/hpbonus3.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hpbonus3.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		hurrostic.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/hurrostic.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				hurrostic.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		iceflection.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/iceflection.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				iceflection.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		icegolem.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/icegolem.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				icegolem.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		icehole.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/icehole.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				icehole.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		iceicebaby.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/iceicebaby.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				iceicebaby.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		icerain.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/icerain.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				icerain.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		iceshards.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/iceshards.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				iceshards.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		icewolf.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/icewolf.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				icewolf.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+
+		iturbe.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/iturbe.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				iturbe.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		letso.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/letso.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				letso.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manabonus.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/manabonus.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manabonus.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		manabonus2.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/manabonus2.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				manabonus2.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		monzy.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/monzy.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				monzy.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		nomadziya.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/nomadziya.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				nomadziya.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+
+		rageofmamuts.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/rageofmamuts.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				rageofmamuts.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		sacredcrystal.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/sacredcrystal.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				sacredcrystal.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		santaspirit.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/santaspirit.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				santaspirit.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		santasvisit.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/santasvisit.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				santasvisit.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		shieldofice.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/shieldofice.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				shieldofice.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		sitorius.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/sitorius.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				sitorius.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		storghar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/storghar.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				storghar.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		therealemperor.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/therealemperor.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				therealemperor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		thiefoficeland.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/thiefoficeland.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				thiefoficeland.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		uthulga.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/uthulga.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				uthulga.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		voziac.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/voziac.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				voziac.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		wolvex.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/wolvex.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				wolvex.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		xalyaandforish.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/xalyaandforish.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				xalyaandforish.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+
+			}
+		});
+		zecse.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/zecse.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				zecse.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
+			}
+		});
+		zithar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent mEvt) {
+				selectedCards[key].setIcon(new ImageIcon(
+						GlacierDeckCardChoosingFrame.class
+								.getResource("/images/glacier/zithar.jpg")));
+				selectedCard1.setVisible(true);
+				key++;
+				zithar.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
+						.getResource("/images/backofdeck.png")));
 
 			}
 		});
 
 	}
-}
-
-class ImagePanel extends JPanel {
-
-	private Image img;
-
-	public ImagePanel(ImageIcon imageIcon) {
-		this(new ImageIcon().getImage());
-	}
-
-	public ImagePanel(Image img) {
-		this.img = img;
-		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-		setPreferredSize(size);
-		setMinimumSize(size);
-		setMaximumSize(size);
-		setSize(size);
-		setLayout(null);
-	}
-
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
-
 }
