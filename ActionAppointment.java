@@ -20,6 +20,8 @@ public class ActionAppointment {
 				if (command.equals("newGameButton")) {
 					try {
 						DeckChoosingFrame.deckChoosingFrame();
+						SoundEffect.clicksound();
+
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
@@ -37,6 +39,8 @@ public class ActionAppointment {
 						if (command.equals("earthDeckButton")) {
 							try {
 								EarthDeckCardChoosingFrame.CardChoosingFrame();
+								SoundEffect.clicksound();
+
 								// playSound();
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
@@ -55,6 +59,8 @@ public class ActionAppointment {
 						if (command.equals("waterDeckButton")) {
 							try {
 								WaterDeckCardChoosingFrame.CardChoosingFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -72,6 +78,8 @@ public class ActionAppointment {
 						if (command.equals("natureDeckButton")) {
 							try {
 								NatureDeckCardChoosingFrame.CardChoosingFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -90,6 +98,8 @@ public class ActionAppointment {
 						if (command.equals("fireDeckButton")) {
 							try {
 								FireDeckCardChoosingFrame.CardChoosingFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -109,6 +119,8 @@ public class ActionAppointment {
 							try {
 								GlacierDeckCardChoosingFrame
 										.CardChoosingFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -128,6 +140,8 @@ public class ActionAppointment {
 							try {
 								UnderworldDeckCardChoosingFrame
 										.CardChoosingFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -149,6 +163,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							EarthDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -165,6 +180,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							EarthDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -182,6 +198,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							EarthDeckCardChoosingFrame.cardRepresentationPanel1
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -198,6 +215,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							EarthDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -212,16 +230,18 @@ public class ActionAppointment {
 						if (command.equals("playButton")) {
 							try {
 								GameProcessFrame.gameProcessFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
-							};
+							}
+							;
 							EarthDeckCardChoosingFrame.cardChoosingFrame
 									.dispose();
 						}
 					}
 				});
-		
 
 		FireDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("panel1arrowRight");
@@ -235,6 +255,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							FireDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -251,6 +272,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							FireDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -268,6 +290,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							FireDeckCardChoosingFrame.cardRepresentationPanel1
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -284,6 +307,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							FireDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -298,6 +322,8 @@ public class ActionAppointment {
 						if (command.equals("playButton")) {
 							try {
 								GameProcessFrame.gameProcessFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -308,7 +334,6 @@ public class ActionAppointment {
 					}
 				});
 
-	
 		GlacierDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
 		GlacierDeckCardChoosingFrame.panel1arrowRight
@@ -321,6 +346,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							GlacierDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -337,6 +363,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							GlacierDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -354,6 +381,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							GlacierDeckCardChoosingFrame.cardRepresentationPanel1
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -370,6 +398,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							GlacierDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -384,6 +413,8 @@ public class ActionAppointment {
 						if (command.equals("playButton")) {
 							try {
 								GameProcessFrame.gameProcessFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -393,7 +424,6 @@ public class ActionAppointment {
 						}
 					}
 				});
-	
 
 		NatureDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
@@ -407,6 +437,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							NatureDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -423,6 +454,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							NatureDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -440,6 +472,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							NatureDeckCardChoosingFrame.cardRepresentationPanel1
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -456,6 +489,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							NatureDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -470,6 +504,8 @@ public class ActionAppointment {
 						if (command.equals("playButton")) {
 							try {
 								GameProcessFrame.gameProcessFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -479,7 +515,6 @@ public class ActionAppointment {
 						}
 					}
 				});
-	
 
 		WaterDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
@@ -493,6 +528,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							WaterDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -509,6 +545,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							WaterDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -526,6 +563,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							WaterDeckCardChoosingFrame.cardRepresentationPanel1
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -542,6 +580,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							WaterDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -558,6 +597,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							WaterDeckCardChoosingFrame.cardRepresentationPanel4
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -574,6 +614,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							WaterDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -588,6 +629,8 @@ public class ActionAppointment {
 						if (command.equals("playButton")) {
 							try {
 								GameProcessFrame.gameProcessFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -597,7 +640,6 @@ public class ActionAppointment {
 						}
 					}
 				});
-		
 
 		UnderworldDeckCardChoosingFrame.panel1arrowRight
 				.setActionCommand("nextButton");
@@ -611,6 +653,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -627,6 +670,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -644,6 +688,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel1
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -660,6 +705,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel2
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -676,6 +722,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel4
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -692,6 +739,7 @@ public class ActionAppointment {
 									.setVisible(false);
 							UnderworldDeckCardChoosingFrame.cardRepresentationPanel3
 									.setVisible(true);
+							SoundEffect.arrowsound();
 
 						}
 					}
@@ -707,6 +755,8 @@ public class ActionAppointment {
 						if (command.equals("playButton")) {
 							try {
 								GameProcessFrame.gameProcessFrame();
+								SoundEffect.clicksound();
+
 							} catch (IOException e1) {
 								// TODO Auto-generated catch block
 								e1.printStackTrace();
@@ -716,30 +766,15 @@ public class ActionAppointment {
 						}
 					}
 				});
-		
 
 		MainMenuFrame.exitButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
+				SoundEffect.clicksound();
 				MainMenuFrame.mainMenuFrame.dispose();
 			}
 		});
 
-	}
-
-	public static void playSound() {
-		try {
-			AudioInputStream audioInputStream = AudioSystem
-					.getAudioInputStream(new File((ActionAppointment.class
-							.getResource("musics/sigurros.wav")).toURI()));
-			Clip clip = AudioSystem.getClip();
-			clip.open(audioInputStream);
-			clip.start();
-
-		} catch (Exception ex) {
-			System.out.println("Error with playing sound.");
-			ex.printStackTrace();
-		}
 	}
 
 }
