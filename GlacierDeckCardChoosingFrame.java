@@ -941,6 +941,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				avalanche.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		betrux.addMouseListener(new MouseAdapter() {
@@ -952,6 +954,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				betrux.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -964,6 +967,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				cubic.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -976,6 +981,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				dancerontheice.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -988,6 +994,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				dragonofthenorth.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1000,6 +1007,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				dulgor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		fhilta.addMouseListener(new MouseAdapter() {
@@ -1011,6 +1020,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				fhilta.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1023,6 +1033,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				fireoffrost.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1035,6 +1046,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				freezingeye.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1047,6 +1059,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				frozenarmor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1059,6 +1072,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				frozendragon.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1071,6 +1085,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				frozenreaction.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1083,6 +1098,7 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				fursang.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1095,6 +1111,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				girloficeland.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		glacialhero.addMouseListener(new MouseAdapter() {
@@ -1106,6 +1124,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				glacialhero.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1118,6 +1138,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				gurasso.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1130,6 +1152,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				hpbonus.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1142,6 +1166,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				hpbonus2.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus3.addMouseListener(new MouseAdapter() {
@@ -1153,6 +1179,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				hpbonus3.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hurrostic.addMouseListener(new MouseAdapter() {
@@ -1164,6 +1192,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				hurrostic.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1176,6 +1206,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				iceflection.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		icegolem.addMouseListener(new MouseAdapter() {
@@ -1187,6 +1219,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				icegolem.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		icehole.addMouseListener(new MouseAdapter() {
@@ -1198,6 +1232,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				icehole.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1210,6 +1246,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				iceicebaby.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1222,6 +1260,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				icerain.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		iceshards.addMouseListener(new MouseAdapter() {
@@ -1233,6 +1273,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				iceshards.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1245,6 +1287,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				icewolf.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 
@@ -1257,6 +1301,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				iturbe.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		letso.addMouseListener(new MouseAdapter() {
@@ -1268,6 +1314,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				letso.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manabonus.addMouseListener(new MouseAdapter() {
@@ -1279,6 +1327,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				manabonus.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manabonus2.addMouseListener(new MouseAdapter() {
@@ -1290,6 +1340,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				manabonus2.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		monzy.addMouseListener(new MouseAdapter() {
@@ -1301,6 +1353,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				monzy.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1313,6 +1367,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				nomadziya.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1326,6 +1382,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				rageofmamuts.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1338,6 +1396,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				sacredcrystal.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1350,6 +1410,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				santaspirit.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1362,6 +1424,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				santasvisit.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		shieldofice.addMouseListener(new MouseAdapter() {
@@ -1373,6 +1437,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				shieldofice.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		sitorius.addMouseListener(new MouseAdapter() {
@@ -1384,6 +1450,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				sitorius.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1396,6 +1464,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				storghar.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1408,6 +1478,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				therealemperor.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		thiefoficeland.addMouseListener(new MouseAdapter() {
@@ -1419,6 +1491,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				thiefoficeland.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1431,6 +1505,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				uthulga.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		voziac.addMouseListener(new MouseAdapter() {
@@ -1442,6 +1518,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				voziac.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		wolvex.addMouseListener(new MouseAdapter() {
@@ -1453,6 +1531,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				wolvex.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		xalyaandforish.addMouseListener(new MouseAdapter() {
@@ -1464,6 +1544,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				xalyaandforish.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1476,6 +1558,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				zecse.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		zithar.addMouseListener(new MouseAdapter() {
@@ -1487,6 +1571,8 @@ public class GlacierDeckCardChoosingFrame {
 				key++;
 				zithar.setIcon(new ImageIcon(GlacierDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
