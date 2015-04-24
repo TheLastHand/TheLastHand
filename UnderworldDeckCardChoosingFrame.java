@@ -1137,6 +1137,9 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				absenthia.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
+			
 
 			}
 		});
@@ -1150,6 +1153,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				ancientdemonic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		angelofdeath.addMouseListener(new MouseAdapter() {
@@ -1161,6 +1166,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				angelofdeath.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		armorofthedarksoul.addMouseListener(new MouseAdapter() {
@@ -1172,6 +1179,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				armorofthedarksoul.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		arpetios.addMouseListener(new MouseAdapter() {
@@ -1183,6 +1192,9 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				arpetios.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
+				
 			}
 		});
 		badhabit.addMouseListener(new MouseAdapter() {
@@ -1194,6 +1206,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				badhabit.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		badluck.addMouseListener(new MouseAdapter() {
@@ -1205,6 +1219,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				badluck.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		bladeofdarklord.addMouseListener(new MouseAdapter() {
@@ -1216,6 +1232,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				bladeofdarklord.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		bloodcholic.addMouseListener(new MouseAdapter() {
@@ -1227,6 +1245,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				bloodcholic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		boatmanofdarkness.addMouseListener(new MouseAdapter() {
@@ -1238,6 +1258,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				boatmanofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		callfromdarkness.addMouseListener(new MouseAdapter() {
@@ -1249,6 +1271,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				callfromdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		cunningman.addMouseListener(new MouseAdapter() {
@@ -1260,6 +1284,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				cunningman.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		darkmagic.addMouseListener(new MouseAdapter() {
@@ -1271,6 +1297,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				darkmagic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		darkreflection.addMouseListener(new MouseAdapter() {
@@ -1282,6 +1310,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				darkreflection.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		demonic.addMouseListener(new MouseAdapter() {
@@ -1293,6 +1323,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				demonic.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1305,6 +1337,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				devilsadvocat.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1317,6 +1351,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				fatalbonds.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		fear.addMouseListener(new MouseAdapter() {
@@ -1328,6 +1364,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				fear.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		gorillaofhell.addMouseListener(new MouseAdapter() {
@@ -1339,6 +1377,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				gorillaofhell.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hellhounds.addMouseListener(new MouseAdapter() {
@@ -1350,6 +1390,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				hellhounds.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus.addMouseListener(new MouseAdapter() {
@@ -1361,6 +1403,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				hpbonus.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1373,6 +1417,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				hpbonus2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus3.addMouseListener(new MouseAdapter() {
@@ -1384,6 +1430,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				hpbonus3.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus4.addMouseListener(new MouseAdapter() {
@@ -1395,6 +1443,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				hpbonus4.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		illusion.addMouseListener(new MouseAdapter() {
@@ -1406,6 +1456,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				illusion.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1418,6 +1470,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				kahkasso.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		khaduun.addMouseListener(new MouseAdapter() {
@@ -1429,6 +1483,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				khaduun.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 
@@ -1441,6 +1497,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				khultzar.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1453,6 +1511,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				lordfear.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manabonus.addMouseListener(new MouseAdapter() {
@@ -1464,6 +1524,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				manabonus.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manabonus2.addMouseListener(new MouseAdapter() {
@@ -1475,6 +1537,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				manabonus2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1487,6 +1551,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				manaregeneration.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manaregeneration2.addMouseListener(new MouseAdapter() {
@@ -1498,6 +1564,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				manaregeneration2.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 
@@ -1510,6 +1578,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				manaregeneration3.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		normorepain.addMouseListener(new MouseAdapter() {
@@ -1521,6 +1591,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				normorepain.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		pickpocket.addMouseListener(new MouseAdapter() {
@@ -1532,6 +1604,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				pickpocket.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1544,6 +1618,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				poisonofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1556,6 +1632,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				psychkick.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		purgatory.addMouseListener(new MouseAdapter() {
@@ -1567,6 +1645,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				purgatory.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1579,6 +1659,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				quatsiah.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		rasputin.addMouseListener(new MouseAdapter() {
@@ -1590,6 +1672,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				rasputin.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1602,6 +1686,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				sacredritual.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		servantofdarklord.addMouseListener(new MouseAdapter() {
@@ -1613,6 +1699,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				servantofdarklord.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1625,6 +1713,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				shieldofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		shiku.addMouseListener(new MouseAdapter() {
@@ -1636,6 +1726,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				shiku.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1648,6 +1740,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				snakehead.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1660,6 +1754,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				soulreaper.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1672,6 +1768,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				spiderking.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1684,6 +1782,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				steelofhell.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1696,6 +1796,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				suiciderskull.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1708,6 +1810,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				surrogates.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1720,6 +1824,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				thefirstofpagans.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1732,6 +1838,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				throneofdarkness.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1744,6 +1852,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				unknown.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1756,6 +1866,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				upsidedown.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1768,6 +1880,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				voodoo.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1780,6 +1894,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				zitoki.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1792,6 +1908,8 @@ public class UnderworldDeckCardChoosingFrame {
 				key++;
 				zombieinvasion.setIcon(new ImageIcon(UnderworldDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
