@@ -127,39 +127,46 @@ public class FireDeckCardChoosingFrame {
 		gameWindowPanel.add(selectedCardPanel);
 		selectedCardPanel.setLayout(null);
 		selectedCardPanel.setBackground(new Color(0, 0, 0, 0));
-		
-		selectedCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+
+		selectedCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard1.setBounds(75, 11, 80, 111);
-		
+
 		selectedCardPanel.add(selectedCard1);
-		selectedCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+		selectedCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard2.setBounds(122, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard2);
-		selectedCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+		selectedCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard3.setBounds(165, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard3);
-		selectedCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+		selectedCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard4.setBounds(212, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard4);
-		selectedCard5.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+		selectedCard5.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard5.setBounds(255, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard5);
-		selectedCard6.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+		selectedCard6.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard6.setBounds(302, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard6);
-		selectedCard7.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+		selectedCard7.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard7.setBounds(345, 11, 80, 111);
 
 		selectedCardPanel.add(selectedCard7);
-		selectedCard8.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+		selectedCard8.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		selectedCard8.setBounds(392, 11, 80, 111);
 
-		
 		selectedCards[0] = selectedCard1;
 		selectedCards[1] = selectedCard2;
 		selectedCards[2] = selectedCard3;
@@ -172,26 +179,29 @@ public class FireDeckCardChoosingFrame {
 		selectedCards[9] = replacementCard2;
 		selectedCards[10] = replacementCard3;
 		selectedCards[11] = replacementCard4;
-						
+
 		selectedCardPanel.add(selectedCard8);
-		
-		replacementCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+
+		replacementCard1.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		replacementCard1.setBounds(75, 129, 80, 111);
 		selectedCardPanel.add(replacementCard1);
-		
-		replacementCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+
+		replacementCard2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		replacementCard2.setBounds(122, 129, 80, 111);
 		selectedCardPanel.add(replacementCard2);
-		
-		replacementCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+
+		replacementCard3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		replacementCard3.setBounds(165, 129, 80, 111);
 		selectedCardPanel.add(replacementCard3);
-		
-		replacementCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+
+		replacementCard4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
+				.getResource("/images/backofdeck.png")));
 		replacementCard4.setBounds(212, 129, 80, 111);
 		selectedCardPanel.add(replacementCard4);
-		
-		
+
 		selectedCard1.setVisible(true);
 		selectedCard2.setVisible(true);
 		selectedCard3.setVisible(true);
@@ -220,37 +230,36 @@ public class FireDeckCardChoosingFrame {
 		cardRepresentationPanel2.setBounds(0, 0, 624, 440);
 		gameWindowPanel.add(cardRepresentationPanel2);
 		cardRepresentationPanel2.setVisible(false);
-	
+
 		cardRepresentationPanel3.setLayout(null);
 		cardRepresentationPanel3.setBackground(new Color(0, 0, 0, 0));
 		cardRepresentationPanel3.setBounds(0, 0, 624, 440);
 		gameWindowPanel.add(cardRepresentationPanel3);
-		cardRepresentationPanel3.setVisible(false);		
+		cardRepresentationPanel3.setVisible(false);
 
 		playButton.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/playButton.png")));
 		playButton.setBounds(514, 178, 100, 40);
 		selectedCardPanel.add(playButton);
-		
+
 		panel1arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel1arrowRight.setBounds(481, 393, 46, 48);
 		panel1arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel1.add(panel1arrowRight);
-		
+
 		panel2arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel2arrowLeft.setBounds(71, 393, 46, 48);
 		panel2arrowLeft.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowLeft);
-		
+
 		panel2arrowRight.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowRight.png")));
 		panel2arrowRight.setBounds(481, 393, 46, 48);
 		panel2arrowRight.setMargin(new Insets(0, 0, 0, 0));
 		cardRepresentationPanel2.add(panel2arrowRight);
-		
-		
+
 		panel3arrowLeft.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class
 				.getResource("/images/arrowLeft.png")));
 		panel3arrowLeft.setBounds(71, 393, 46, 48);
@@ -929,6 +938,7 @@ public class FireDeckCardChoosingFrame {
 				angelofvutrag.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -942,6 +952,7 @@ public class FireDeckCardChoosingFrame {
 				burningaemadillo.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -955,6 +966,8 @@ public class FireDeckCardChoosingFrame {
 				criticaldamage.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		danceoffire.addMouseListener(new MouseAdapter() {
@@ -967,6 +980,8 @@ public class FireDeckCardChoosingFrame {
 				danceoffire.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		deerthemightest.addMouseListener(new MouseAdapter() {
@@ -979,6 +994,7 @@ public class FireDeckCardChoosingFrame {
 				deerthemightest.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -992,6 +1008,7 @@ public class FireDeckCardChoosingFrame {
 				dragonofflames.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1005,7 +1022,7 @@ public class FireDeckCardChoosingFrame {
 				elderreptile.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
-				;
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1018,7 +1035,10 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				explosion.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
+
 		});
 		firearmor.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent mEvt) {
@@ -1029,6 +1049,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				firearmor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		firegolem.addMouseListener(new MouseAdapter() {
@@ -1040,6 +1062,7 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				firegolem.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1052,6 +1075,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				firewall.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		firewolf.addMouseListener(new MouseAdapter() {
@@ -1063,6 +1088,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				firewolf.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		flamefusion.addMouseListener(new MouseAdapter() {
@@ -1075,6 +1102,8 @@ public class FireDeckCardChoosingFrame {
 				flamefusion.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		flameguard.addMouseListener(new MouseAdapter() {
@@ -1087,6 +1116,8 @@ public class FireDeckCardChoosingFrame {
 				flameguard.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1100,6 +1131,8 @@ public class FireDeckCardChoosingFrame {
 				flamethrower.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		frodo.addMouseListener(new MouseAdapter() {
@@ -1111,6 +1144,7 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				frodo.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1123,6 +1157,7 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				furcius.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1135,6 +1170,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				ginger.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hot.addMouseListener(new MouseAdapter() {
@@ -1146,6 +1183,7 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				hot.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1158,6 +1196,7 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				hpbonus.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1170,6 +1209,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				hpbonus2.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus3.addMouseListener(new MouseAdapter() {
@@ -1181,6 +1222,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				hpbonus3.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hyusha.addMouseListener(new MouseAdapter() {
@@ -1192,6 +1235,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				hyusha.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		iseeyou.addMouseListener(new MouseAdapter() {
@@ -1203,6 +1248,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				iseeyou.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		kingofthumbor.addMouseListener(new MouseAdapter() {
@@ -1215,6 +1262,8 @@ public class FireDeckCardChoosingFrame {
 				kingofthumbor.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		kingofwrath.addMouseListener(new MouseAdapter() {
@@ -1227,6 +1276,8 @@ public class FireDeckCardChoosingFrame {
 				kingofwrath.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		knightofthumbor.addMouseListener(new MouseAdapter() {
@@ -1239,6 +1290,8 @@ public class FireDeckCardChoosingFrame {
 				knightofthumbor.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 
@@ -1251,6 +1304,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				kockhar.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		lava.addMouseListener(new MouseAdapter() {
@@ -1262,6 +1317,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				lava.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		litmua.addMouseListener(new MouseAdapter() {
@@ -1273,6 +1330,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				litmua.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		lordofflames.addMouseListener(new MouseAdapter() {
@@ -1285,6 +1344,7 @@ public class FireDeckCardChoosingFrame {
 				lordofflames.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1297,6 +1357,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				manabonus.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manabonus2.addMouseListener(new MouseAdapter() {
@@ -1309,6 +1371,8 @@ public class FireDeckCardChoosingFrame {
 				manabonus2.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 
@@ -1321,6 +1385,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				meanor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		nomercy.addMouseListener(new MouseAdapter() {
@@ -1332,6 +1398,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				nomercy.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		patrux.addMouseListener(new MouseAdapter() {
@@ -1343,6 +1411,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				patrux.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		presence.addMouseListener(new MouseAdapter() {
@@ -1354,6 +1424,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				presence.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		realburst.addMouseListener(new MouseAdapter() {
@@ -1365,6 +1437,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				realburst.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		sengard.addMouseListener(new MouseAdapter() {
@@ -1376,6 +1450,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				sengard.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1388,6 +1464,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				sheila.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1401,6 +1479,8 @@ public class FireDeckCardChoosingFrame {
 				shieldinflames.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		sindor.addMouseListener(new MouseAdapter() {
@@ -1412,6 +1492,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				sindor.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1424,6 +1506,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				skyscream.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1437,6 +1521,8 @@ public class FireDeckCardChoosingFrame {
 				thisgirlisonfire.setIcon(new ImageIcon(
 						FireDeckCardChoosingFrame.class
 								.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		ticano.addMouseListener(new MouseAdapter() {
@@ -1448,6 +1534,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				ticano.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1460,6 +1548,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				turcox.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		welder.addMouseListener(new MouseAdapter() {
@@ -1471,6 +1561,8 @@ public class FireDeckCardChoosingFrame {
 				key++;
 				welder.setIcon(new ImageIcon(FireDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 	}
