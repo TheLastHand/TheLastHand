@@ -1043,6 +1043,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		
@@ -1055,6 +1057,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				belutax.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		callofnature.addMouseListener(new MouseAdapter() {
@@ -1066,6 +1070,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				callofnature.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		centaur.addMouseListener(new MouseAdapter() {
@@ -1077,6 +1083,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				centaur.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		charm.addMouseListener(new MouseAdapter() {
@@ -1088,6 +1096,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				charm.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1100,6 +1110,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				corruption.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1112,6 +1124,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				deeproots.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		elvengirl.addMouseListener(new MouseAdapter() {
@@ -1123,6 +1137,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				elvengirl.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		fathurux.addMouseListener(new MouseAdapter() {
@@ -1134,6 +1150,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				fathurux.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1146,6 +1164,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				forestgin.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		greatcare.addMouseListener(new MouseAdapter() {
@@ -1157,6 +1177,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				greatcare.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1169,6 +1191,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				greenhippi.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		halusination.addMouseListener(new MouseAdapter() {
@@ -1180,6 +1204,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				halusination.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1192,6 +1218,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				harmonicconvergence.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1204,6 +1232,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				hpbonus.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1216,6 +1246,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				hpbonus2.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus3.addMouseListener(new MouseAdapter() {
@@ -1227,6 +1259,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				hpbonus3.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus4.addMouseListener(new MouseAdapter() {
@@ -1238,6 +1272,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				hpbonus4.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpregeneration.addMouseListener(new MouseAdapter() {
@@ -1249,6 +1285,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				hpregeneration.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hurrican.addMouseListener(new MouseAdapter() {
@@ -1260,6 +1298,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				hurrican.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1272,6 +1312,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				ladytheforest.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		liquidleaves.addMouseListener(new MouseAdapter() {
@@ -1283,6 +1325,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				liquidleaves.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1295,6 +1339,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				magicmushroom.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		malfurion.addMouseListener(new MouseAdapter() {
@@ -1306,6 +1352,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manabonus.addMouseListener(new MouseAdapter() {
@@ -1317,6 +1365,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manabonus2.addMouseListener(new MouseAdapter() {
@@ -1328,6 +1378,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		manaregeneration.addMouseListener(new MouseAdapter() {
@@ -1339,6 +1391,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				manaregeneration.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 
@@ -1351,6 +1405,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				manaregeneration2.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1363,6 +1419,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				manaregeneration3.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		motherofnature.addMouseListener(new MouseAdapter() {
@@ -1374,6 +1432,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				motherofnature.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		mrcrocodile.addMouseListener(new MouseAdapter() {
@@ -1385,6 +1445,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				mrcrocodile.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		naturalzombie.addMouseListener(new MouseAdapter() {
@@ -1396,6 +1458,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				naturalzombie.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1408,6 +1472,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				naturalzone.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1421,6 +1487,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				naturetransporter.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		protectoroftherealm.addMouseListener(new MouseAdapter() {
@@ -1432,6 +1500,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				protectoroftherealm.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1444,6 +1514,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				rangerofthevalley.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1456,6 +1528,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				rebirth.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		rootsinthedeep.addMouseListener(new MouseAdapter() {
@@ -1467,6 +1541,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				rootsinthedeep.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1479,6 +1555,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		shepherd.addMouseListener(new MouseAdapter() {
@@ -1490,6 +1568,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		shieldofnature.addMouseListener(new MouseAdapter() {
@@ -1501,6 +1581,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		solidarity.addMouseListener(new MouseAdapter() {
@@ -1512,6 +1594,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		souloflife.addMouseListener(new MouseAdapter() {
@@ -1523,6 +1607,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		spiritoftheforest.addMouseListener(new MouseAdapter() {
@@ -1534,6 +1620,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				bangurath.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1546,6 +1634,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				stoyax.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		thc.addMouseListener(new MouseAdapter() {
@@ -1557,6 +1647,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				thc.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		thealmighty.addMouseListener(new MouseAdapter() {
@@ -1568,6 +1660,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				thealmighty.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1580,6 +1674,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				thegreathoot.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1592,6 +1688,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				timesofdinosaurs.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1604,6 +1702,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				treeboy.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1616,6 +1716,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				undyingspirit.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		weezy.addMouseListener(new MouseAdapter() {
@@ -1627,6 +1729,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				weezy.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
@@ -1639,6 +1743,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				whole.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		woodenwoman.addMouseListener(new MouseAdapter() {
@@ -1650,6 +1756,8 @@ public class NatureDeckCardChoosingFrame {
 				key++;
 				woodenwoman.setIcon(new ImageIcon(NatureDeckCardChoosingFrame.class
 						.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 
 			}
 		});
