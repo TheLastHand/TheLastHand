@@ -520,6 +520,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				adam.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -541,6 +542,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				ancientracoon.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -562,6 +564,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				atmosphere.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -582,6 +585,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				buriedarmy.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -602,6 +606,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				champ.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -622,6 +627,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				dolza.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -642,6 +648,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				earthhole.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -651,6 +658,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/earthquakeb.jpg")));
 				biggerVersionButton.setVisible(true);
+			
 
 			}
 		});
@@ -662,6 +670,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				earthquake.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -682,6 +691,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				eclipse.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -702,6 +712,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				elderdynosaur.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -722,6 +733,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				embedded.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -742,6 +754,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				fatlord.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -762,6 +775,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				formofmud.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -782,6 +796,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				fornax.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -802,6 +817,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				gortag.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -822,6 +838,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				greatabsorbation.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -842,6 +859,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				groundshaker.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -862,6 +880,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				gruntag.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -871,6 +890,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/guardianofgolemsb.jpg")));
 				biggerVersionButton.setVisible(true);
+		
 
 			}
 		});
@@ -882,6 +902,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				guardianofgolems.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -891,6 +912,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/hpbonusb.jpg")));
 				biggerVersionButton.setVisible(true);
+				
 
 			}
 		});
@@ -902,6 +924,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				hpbonus.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -911,6 +934,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/hpbonus2b.jpg")));
 				biggerVersionButton.setVisible(true);
+		
 
 			}
 		});
@@ -922,6 +946,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				hpbonus2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -931,6 +956,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/hpbonus3b.jpg")));
 				biggerVersionButton.setVisible(true);
+			
 
 			}
 		});
@@ -942,6 +968,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				hpbonus3.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -951,6 +978,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/hpbonus4b.jpg")));
 				biggerVersionButton.setVisible(true);
+				
 
 			}
 		});
@@ -962,6 +990,8 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				hpbonus4.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
+
 			}
 		});
 		hpbonus5.addMouseListener(new MouseAdapter() {
@@ -970,6 +1000,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/hpbonus5b.jpg")));
 				biggerVersionButton.setVisible(true);
+				
 
 			}
 		});
@@ -981,6 +1012,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				hpbonus5.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -990,6 +1022,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/krakenb.jpg")));
 				biggerVersionButton.setVisible(true);
+		
 
 			}
 		});
@@ -1001,6 +1034,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				kraken.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1010,6 +1044,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/lieutenantturtleb.jpg")));
 				biggerVersionButton.setVisible(true);
+				
 
 			}
 		});
@@ -1021,6 +1056,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				lieutenantturtle.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1030,6 +1066,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/lycanrangerb.jpg")));
 				biggerVersionButton.setVisible(true);
+			
 
 			}
 		});
@@ -1041,6 +1078,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				lycanranger.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1051,6 +1089,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/manabonusb.jpg")));
 				biggerVersionButton.setVisible(true);
+		
 
 			}
 		});
@@ -1062,6 +1101,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				manabonus.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1071,7 +1111,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/manofdustb.jpg")));
 				biggerVersionButton.setVisible(true);
-
+				
 			}
 		});
 		manofdust.addMouseListener(new MouseAdapter() {
@@ -1082,6 +1122,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				manofdust.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1091,7 +1132,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/meteorab.jpg")));
 				biggerVersionButton.setVisible(true);
-
+		
 			}
 		});
 		meteora.addMouseListener(new MouseAdapter() {
@@ -1102,6 +1143,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				meteora.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1111,6 +1153,7 @@ public class EarthDeckCardChoosingFrame {
 						EarthDeckCardChoosingFrame.class
 								.getResource("/images/earth/nuxiab.jpg")));
 				biggerVersionButton.setVisible(true);
+			
 
 			}
 		});
@@ -1122,6 +1165,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				nuxia.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1142,6 +1186,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				reflection.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1162,6 +1207,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				reflection2.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1183,6 +1229,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				rhachor.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1203,6 +1250,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				robotsoldier.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1223,6 +1271,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				rocky.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1243,6 +1292,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				rorox.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1263,6 +1313,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				rustybull.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1283,6 +1334,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				shaker.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1303,6 +1355,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				shieldofbereth.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1323,6 +1376,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				skorka.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1343,6 +1397,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				sorktangthesleepy.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1363,6 +1418,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				splitter.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1383,6 +1439,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				stuckinthesand.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1403,6 +1460,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				thegreatmammoth.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1423,6 +1481,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				trochkar.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1443,6 +1502,7 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				untouchable.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
@@ -1463,9 +1523,11 @@ public class EarthDeckCardChoosingFrame {
 				selectedCard1.setVisible(true);
 				key++;
 				zildar.setIcon(new ImageIcon(EarthDeckCardChoosingFrame.class.getResource("/images/backofdeck.png")));
+				SoundEffect.selectingEffect();
 
 			}
 		});
 
+		
 	}
 }
