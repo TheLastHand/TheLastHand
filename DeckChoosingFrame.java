@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.JTextArea;
 
 public class DeckChoosingFrame {
 
@@ -22,6 +24,9 @@ public class DeckChoosingFrame {
 	protected static JButton waterDeckButton = new JButton();
 	protected static JButton biggerVersionButton = new JButton();
 	protected static JButton btnNewButton = new JButton();
+	public static JTextField textField = new JTextField();
+	public static JTextArea messageArea = new JTextArea();
+
 
 	/**
 	 * @wbp.parser.entryPoint
@@ -89,26 +94,28 @@ public class DeckChoosingFrame {
 		chatPanel.setBounds(623, 437, 361, 245);
 		deckChoosingPanel.add(chatPanel);
 		chatPanel.setBackground(new Color(0, 0, 0, 0));
+		chatPanel.setLayout(null);
 
-		btnNewButton
-				.setIcon(new ImageIcon(DeckChoosingFrame.class
-						.getResource("/images/appstore.png")));
+		textField.setBounds(0, 214, 361, 31);
+		chatPanel.add(textField);
+		textField.setColumns(10);
+
+		messageArea.setBounds(0, 0, 361, 203);
+		chatPanel.add(messageArea);
+
+		btnNewButton.setIcon(new ImageIcon(DeckChoosingFrame.class
+				.getResource("/images/appstore.png")));
 		btnNewButton.setBounds(396, 585, 200, 62);
 		deckChoosingPanel.add(btnNewButton);
 		btnNewButton.setMargin(new Insets(0, 0, 0, 0));
 		btnNewButton.setBorder(null);
 
-		
 		biggerVersionButton.setVisible(false);
 
-		
-	
-		
 		earthDeckButton.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton
-						.setIcon(new ImageIcon(
-								DeckChoosingFrame.class
+				biggerVersionButton.setIcon(new ImageIcon(
+						DeckChoosingFrame.class
 								.getResource("/images/earthdeckb.jpg")));
 				biggerVersionButton.setVisible(true);
 
@@ -116,8 +123,8 @@ public class DeckChoosingFrame {
 		});
 		fireDeckButton.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton
-						.setIcon(new ImageIcon(DeckChoosingFrame.class
+				biggerVersionButton.setIcon(new ImageIcon(
+						DeckChoosingFrame.class
 								.getResource("/images/firedeckb.jpg")));
 				biggerVersionButton.setVisible(true);
 
@@ -125,8 +132,8 @@ public class DeckChoosingFrame {
 		});
 		glacierDeckButton.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton
-						.setIcon(new ImageIcon(DeckChoosingFrame.class
+				biggerVersionButton.setIcon(new ImageIcon(
+						DeckChoosingFrame.class
 								.getResource("/images/glacierdeckb.jpg")));
 				biggerVersionButton.setVisible(true);
 
@@ -134,8 +141,8 @@ public class DeckChoosingFrame {
 		});
 		natureDeckButton.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton
-						.setIcon(new ImageIcon(DeckChoosingFrame.class
+				biggerVersionButton.setIcon(new ImageIcon(
+						DeckChoosingFrame.class
 								.getResource("/images/naturedeckb.jpg")));
 				biggerVersionButton.setVisible(true);
 
@@ -143,8 +150,8 @@ public class DeckChoosingFrame {
 		});
 		underworldDeckButton.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton
-						.setIcon(new ImageIcon(DeckChoosingFrame.class
+				biggerVersionButton.setIcon(new ImageIcon(
+						DeckChoosingFrame.class
 								.getResource("/images/underworlddeckb.jpg")));
 				biggerVersionButton.setVisible(true);
 
@@ -152,8 +159,8 @@ public class DeckChoosingFrame {
 		});
 		waterDeckButton.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent mEvt) {
-				biggerVersionButton
-						.setIcon(new ImageIcon(DeckChoosingFrame.class
+				biggerVersionButton.setIcon(new ImageIcon(
+						DeckChoosingFrame.class
 								.getResource("/images/waterdeckb.jpg")));
 				biggerVersionButton.setVisible(true);
 
@@ -171,10 +178,8 @@ public class DeckChoosingFrame {
 				}
 			}
 		});
-		
-		
+
 		deckChoosingFrame.repaint();
 
 	}
 }
-
